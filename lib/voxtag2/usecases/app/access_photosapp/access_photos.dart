@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:photo_album_manager/photo_album_manager.dart';
 import 'package:voxtag2app/voxtag2/instance/Streams.dart';
 import 'package:voxtag2app/voxtag2/usecases/app/access_photosapp/photos_status.dart';
-import 'package:voxtag2app/voxtag2/usecases/app/display_maindisplay/display_photos/photos_grid.dart';
+import 'package:voxtag2app/voxtag2/usecases/photos/display_photos/photos_grid.dart';
 // import 'package:photo_album_manager/photo_album_manager.dart';
 // import 'package:voxtag2app/voxtag3/app/streams.dart';
 // import 'package:voxtag2app/voxtag3/views/photos/usecases/display_photos/photos_grid.dart';

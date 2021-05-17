@@ -1,5 +1,5 @@
 import 'package:flutter/cupertino.dart';
-import 'package:voxtag2app/voxtag2/usecases/app/display_maindisplay/display_photos/photos_grid.dart';
+import 'package:voxtag2app/voxtag2/usecases/photos/display_photos/photos_grid.dart';
 
 class PhotosView extends StatelessWidget {
   const PhotosView({Key key}) : super(key: key);
