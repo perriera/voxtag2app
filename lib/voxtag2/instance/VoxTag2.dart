@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:voxtag2app/voxtag2/usecases/app/display_mainscreen/main_screen.dart';
 
 class VoxTag2 extends StatelessWidget {
   // This widget is the root of your application.
@@ -23,7 +24,7 @@ class VoxTag2 extends StatelessWidget {
         // closer together (more dense) than on mobile platforms.
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: MyHomePage(title: 'VoxTag2 App'),
+      home: MainDisplay(),
     );
   }
 }
