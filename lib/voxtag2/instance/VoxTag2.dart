@@ -3,13 +3,14 @@ import 'package:flutter/material.dart';
 import 'package:voxtag2app/voxtag2/instance/Themes.dart';
 import 'package:voxtag2app/voxtag2/system/load_path.dart';
 import 'package:voxtag2app/voxtag2/usecases/app/display_maindisplay/main_display.dart';
+import 'package:voxtag2app/voxtag2/usecases/photos/access_photos/PhotosAlbum.dart';
 
 class VoxTag2 extends StatelessWidget {
   VoxTag2() {
     LoadPath.init().then((applicationPath) {
       print(applicationPath);
       // TagsStorage.init(applicationPath);
-      // PhotosAlbum().init();
+      PhotosAlbum().init();
     });
   }
 
