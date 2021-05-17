@@ -44,6 +44,13 @@ flutter:
   # the material Icons class.
   uses-material-design: true
 
+  assets:
+    - images/
+    - images/selected/
+    - images/overlays/
+    - images/logos/
+    - services/
+
   # To add assets to your application, add an assets section, like this:
   # assets:
   #   - images/a_dot_burr.jpeg
@@ -54,6 +61,15 @@ flutter:
 
   # For details regarding adding assets from package dependencies, see
   # https://flutter.dev/assets-and-images/#from-packages
+
+  fonts:
+    - family: Raleway
+      fonts:
+        - asset: fonts/Raleway/Raleway-VariableFont_wght.ttf
+        #         - asset: fonts/Raleway/static/Raleway-Medium.ttf
+        - asset: fonts/Raleway/Raleway-Italic-VariableFont_wght.ttf
+        #           style: italic
+          weight: 700
 
   # To add custom fonts to your application, add a fonts section here,
   # in this "flutter" section. Each entry in this list should have a
