@@ -27,9 +27,9 @@ class RefreshPhotosButton extends StatelessWidget {
           // PhotosAlbum().init();
         });
         PhotoAlbumManager.checkPermissions().then((status) {
-          Toast.show("权限同意 (granted)", context);
+          Toast.show("Photos app access granted", context);
         }).catchError((error) {
-          Toast.show("权限拒绝 (denied)", context);
+          Toast.show("Photos app access denied", context);
         });
         // PermissionStatus status = await PhotoAlbumManager.checkPermissions();
         // if (status == PermissionStatus.granted) {
