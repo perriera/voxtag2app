@@ -9,7 +9,7 @@ class MainDisplay extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppTopBar(),
-      body: PhotosView(),
+      body: PhotosView(context),
       bottomNavigationBar: PhotosNavBar(),
       backgroundColor: ThemeCatalog.kMainColor,
     );

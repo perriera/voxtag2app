@@ -1,20 +1,28 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:voxtag2app/voxtag2/instance/Themes.dart';
+import 'package:voxtag2app/voxtag2/system/load_path.dart';
 import 'package:voxtag2app/voxtag2/usecases/app/display_maindisplay/main_display.dart';
+import 'package:voxtag2app/voxtag2/usecases/photos/database/PhotoAlbum.dart';
 
 class VoxTag2 extends StatelessWidget {
-  // VoxTag2() {
-  //   LoadPath.init().then((applicationPath) {
-  //     print(applicationPath);
-  //     // TagsStorage.init(applicationPath);
-  //     // PhotosAlbum().init();
-  //   });
-  // }
+  bool initialized = false;
+  void initApp(BuildContext context) {
+    LoadPath.init().then((applicationPath) {
+      print(applicationPath);
+      // TagsStorage.init(applicationPath);
+      // PhotosAlbum().init();
+    });
+    PhotosAlbum().access(context);
+    initialized = true;
+  }
 
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+    if (!initialized) {
+      initApp(context);
+    }
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeCatalog.select(context, 0),

@@ -9,10 +9,33 @@ import 'package:voxtag2app/voxtag2/usecases/photos/display/photos_grid.dart';
 // import 'package:voxtag2app/voxtag3/views/photos/usecases/display_photos/photos_grid.dart';
 // import 'package:voxtag2app/voxtag3/views/photos/usecases/display_photos/photos_status.dart';
 
-class PhotosView extends StatelessWidget {
-  PhotosView({
-    Key key,
-  }) : super(key: key);
+class PhotosView extends StatefulWidget {
+  final BuildContext context;
+  PhotosView(
+    this.context,
+  );
+
+  @override
+  State<PhotosView> createState() => _PhotosViewState();
+}
+
+class _PhotosViewState extends State<PhotosView> with WidgetsBindingObserver {
+  List<String> events = [];
+
+  void didChangeAppLifecycleState(AppLifecycleState state) {
+    print(state.toString());
+    events.add(state.toString());
+    if (state == AppLifecycleState.resumed) {
+      PhotosAlbum().access(widget.context);
+    }
+    setState(() {});
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    WidgetsBinding.instance.addObserver(this);
+  }
 
   @override
   Widget build(BuildContext context) {
