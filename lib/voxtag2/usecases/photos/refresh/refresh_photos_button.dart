@@ -20,23 +20,23 @@ class RefreshPhotosButton extends StatelessWidget {
     return NavBarButton(
       icon: FontAwesomeIcons.redo,
       title: "Update",
-      onTap: () async {
+      onTap: () {
         LoadPath.init().then((applicationPath) {
           print(applicationPath);
           // TagsStorage.init(applicationPath);
           // PhotosAlbum().init();
         });
-        // PhotoAlbumManager.checkPermissions().then((status) {
-        //   print(status);
-        // }).catchError((error) {
-        //   print(error.toString());
-        // });
-        PermissionStatus status = await PhotoAlbumManager.checkPermissions();
-        if (status == PermissionStatus.granted) {
+        PhotoAlbumManager.checkPermissions().then((status) {
           Toast.show("权限同意 (granted)", context);
-        } else {
+        }).catchError((error) {
           Toast.show("权限拒绝 (denied)", context);
-        }
+        });
+        // PermissionStatus status = await PhotoAlbumManager.checkPermissions();
+        // if (status == PermissionStatus.granted) {
+        //   Toast.show("权限同意 (granted)", context);
+        // } else {
+        //   Toast.show("权限拒绝 (denied)", context);
+        // }
       }, // RefreshPhotoUseCase(context),
     );
     // });
