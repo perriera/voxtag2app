@@ -4,6 +4,7 @@ import 'package:photo_album_manager/photo_album_manager.dart';
 import 'package:toast/toast.dart';
 import 'package:voxtag2app/voxtag2/extensions/NavBarButton.dart';
 import 'package:voxtag2app/voxtag2/system/load_path.dart';
+import 'package:voxtag2app/voxtag2/usecases/photos/database/PhotoAlbum.dart';
 
 class RefreshPhotosButton extends StatelessWidget {
   const RefreshPhotosButton({
@@ -26,17 +27,7 @@ class RefreshPhotosButton extends StatelessWidget {
           // TagsStorage.init(applicationPath);
           // PhotosAlbum().init();
         });
-        PhotoAlbumManager.checkPermissions().then((status) {
-          Toast.show("Photos app access granted", context);
-        }).catchError((error) {
-          Toast.show("Photos app access denied", context);
-        });
-        // PermissionStatus status = await PhotoAlbumManager.checkPermissions();
-        // if (status == PermissionStatus.granted) {
-        //   Toast.show("权限同意 (granted)", context);
-        // } else {
-        //   Toast.show("权限拒绝 (denied)", context);
-        // }
+        PhotosAlbum().access(context);
       }, // RefreshPhotoUseCase(context),
     );
     // });
