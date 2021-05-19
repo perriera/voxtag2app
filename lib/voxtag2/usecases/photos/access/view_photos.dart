@@ -1,8 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:photo_album_manager/photo_album_manager.dart';
-import 'package:voxtag2app/voxtag2/instance/Streams.dart';
 import 'package:voxtag2app/voxtag2/usecases/photos/access/view_status.dart';
+import 'package:voxtag2app/voxtag2/usecases/photos/database/PhotoAlbum.dart';
 import 'package:voxtag2app/voxtag2/usecases/photos/display/photos_grid.dart';
 // import 'package:photo_album_manager/photo_album_manager.dart';
 // import 'package:voxtag2app/voxtag3/app/streams.dart';
