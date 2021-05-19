@@ -1,17 +1,16 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:voxtag2app/voxtag2/instance/Themes.dart';
-import 'package:voxtag2app/voxtag2/system/load_path.dart';
 import 'package:voxtag2app/voxtag2/usecases/app/display_maindisplay/main_display.dart';
 
 class VoxTag2 extends StatelessWidget {
-  VoxTag2() {
-    LoadPath.init().then((applicationPath) {
-      print(applicationPath);
-      // TagsStorage.init(applicationPath);
-      // PhotosAlbum().init();
-    });
-  }
+  // VoxTag2() {
+  //   LoadPath.init().then((applicationPath) {
+  //     print(applicationPath);
+  //     // TagsStorage.init(applicationPath);
+  //     // PhotosAlbum().init();
+  //   });
+  // }
 
   // This widget is the root of your application.
   @override
