@@ -4,7 +4,7 @@ import 'package:voxtag2app/voxtag2/usecases/photos/database/GridSizeInterface.da
 import 'package:voxtag2app/voxtag2/usecases/photos/database/GridSizeUpdate.dart';
 import 'package:voxtag2app/voxtag2/usecases/photos/database/PhotoAlbum.dart';
 import 'package:voxtag2app/voxtag2/usecases/photos/database/PhotosUpdate.dart';
-import 'package:voxtag2app/voxtag2/usecases/photos/database/VoxTagInterface.dart';
+import 'package:voxtag2app/voxtag2/usecases/voxtags/VoxTagInterface.dart';
 import 'package:voxtag2app/voxtag2/usecases/photos/display/photos_spinner.dart';
 import 'package:voxtag2app/voxtag2/usecases/photos/display/photos_thumbnail.dart';
 import 'dart:io' as io;

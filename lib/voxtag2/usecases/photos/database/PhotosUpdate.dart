@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:voxtag2app/voxtag2/usecases/photos/database/PhotoAlbum.dart';
 
-import 'VoxTagInterface.dart';
+import '../../voxtags/VoxTagInterface.dart';
 
 abstract class PhotosUpdateInterface {
   String get title;
