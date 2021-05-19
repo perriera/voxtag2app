@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:photo_album_manager/photo_album_manager.dart';
+import 'package:toast/toast.dart';
 import 'package:voxtag2app/voxtag2/extensions/NavBarButton.dart';
 import 'package:voxtag2app/voxtag2/system/load_path.dart';
 
@@ -19,7 +20,7 @@ class RefreshPhotosButton extends StatelessWidget {
     return NavBarButton(
       icon: FontAwesomeIcons.redo,
       title: "Update",
-      onTap: () {
+      onTap: () async {
         LoadPath.init().then((applicationPath) {
           print(applicationPath);
           // TagsStorage.init(applicationPath);
@@ -30,6 +31,12 @@ class RefreshPhotosButton extends StatelessWidget {
         // }).catchError((error) {
         //   print(error.toString());
         // });
+        PermissionStatus status = await PhotoAlbumManager.checkPermissions();
+        if (status == PermissionStatus.granted) {
+          Toast.show("权限同意 (granted)", context);
+        } else {
+          Toast.show("权限拒绝 (denied)", context);
+        }
       }, // RefreshPhotoUseCase(context),
     );
     // });
