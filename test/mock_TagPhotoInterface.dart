@@ -20,15 +20,6 @@ class VoxTag implements VoxTagInterface {
 // Mock class
 class MockVoxTags extends Mock implements TagPhotoInterface {}
 
-// Fake class
-class FakeCat extends Fake implements TagPhotoInterface {
-  @override
-  bool eatFood(String food, {bool hungry}) {
-    print('Fake eat $food');
-    return true;
-  }
-}
-
 void main() {
   VoxTags voxtags;
   TagPhotoInterface mockVoxTags;
