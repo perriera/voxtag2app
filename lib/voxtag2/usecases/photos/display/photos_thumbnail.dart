@@ -1,5 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:voxtag2app/voxtag2/instance/VoxTag2.dart';
+import 'package:voxtag2app/voxtag2/usecases/photo/view_photo.dart';
 import 'package:voxtag2app/voxtag2/usecases/photos/database/VoxTag.dart';
 import 'package:voxtag2app/voxtag2/usecases/photos/display/photo_tags.dart';
 
@@ -26,8 +28,8 @@ class _PhotoThumbnailState extends State<PhotoThumbnail> {
         });
       },
       onDoubleTap: () {
-        // PhotoViewer.voxTag = widget.photoId;
-        // Navigator.pushNamed(context, "/photoView");
+        PhotoViewer.voxTag = widget.photoId;
+        Navigator.pushNamed(context, VoxTag2.photoView);
       },
       child: Container(
         foregroundDecoration: BoxDecoration(
