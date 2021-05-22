@@ -17,42 +17,30 @@ class PhotoLoader extends StatelessWidget {
     this.filename,
   }) : super(key: key);
 
-//  Future<File> _getLocalFile(String filename) async {
-//     String dir = (await getApplicationDocumentsDirectory()).path;
-//     File f = new File('$dir/$filename');
-//     return f;
-//   }
-
+  @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Text("Hello world"),
-    );
+    return FutureBuilder<Widget>(
+        initialData: Container(child: Text('Loading image...')),
+        future: Future<Widget>.delayed(
+          Duration(seconds: 0),
+          () async {
+            try {
+              var fi = FileImage(io.File(filename));
+              PhotoLoader.fileImage = fi;
+              previousFileName = filename;
+              return pi.PhotoWidget(
+                fileImage: fi,
+                photoId: PhotoViewer.voxTag,
+              );
+            } catch (error) {
+              var msg = 'PhotoLoader:future() $error';
+              print(msg);
+              return Container(child: Text(msg));
+            }
+          },
+        ),
+        builder: (context, snapshot) {
+          return snapshot.data;
+        });
   }
-
-  // @override
-  // Widget build(BuildContext context) {
-  //   return FutureBuilder<Widget>(
-  //       initialData: Container(child: Text('Loading image...')),
-  //       future: Future<Widget>.delayed(
-  //         Duration(seconds: 0),
-  //         () async {
-  //           try {
-  //             var fi = FileImage(io.File(filename));
-  //             PhotoLoader.fileImage = fi;
-  //             previousFileName = filename;
-  //             return pi.PhotoWidget(
-  //               fileImage: fi,
-  //               photoId: PhotoViewer.voxTag,
-  //             );
-  //           } catch (error) {
-  //             var msg = 'PhotoLoader:future() $error';
-  //             print(msg);
-  //             return Container(child: Text(msg));
-  //           }
-  //         },
-  //       ),
-  //       builder: (context, snapshot) {
-  //         return snapshot.data;
-  //       });
-  // }
 }
