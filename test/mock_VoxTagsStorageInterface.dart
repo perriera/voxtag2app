@@ -22,9 +22,9 @@ void main() {
       voxtags.load(name);
     });
     when(mockVoxTags.save(any)).thenAnswer((params) {
-      VoxTagInterface voxtag = params.positionalArguments[0];
+      String name = params.positionalArguments[0];
       String tags = params.positionalArguments[1];
-      voxtags.tag(voxtag, tags);
+      voxtags.save(name);
     });
   });
 

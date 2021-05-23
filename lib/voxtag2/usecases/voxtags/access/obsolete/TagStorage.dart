@@ -1,5 +1,8 @@
 import 'dart:convert';
 import 'dart:io';
+import 'dart:io';
+import 'dart:async';
+import 'package:path_provider/path_provider.dart';
 
 class TagsStorage {
   final String filename;
@@ -9,6 +12,12 @@ class TagsStorage {
 
   static void init(String applicationPath) {
     applicationDocumentsDirectory = applicationPath;
+  }
+
+  Future<File> _getLocalFile(String filename) async {
+    String dir = (await getApplicationDocumentsDirectory()).path;
+    File f = new File('$dir/$filename');
+    return f;
   }
 
   String get localPathname {

@@ -1,5 +1,6 @@
 // Real class
 
+import 'access/obsolete/TagStorage.dart';
 import 'interfaces/VoxTagInterface.dart';
 import 'interfaces/VoxTagsInterface.dart';
 
@@ -7,6 +8,12 @@ class VoxTags implements VoxTagsInterface {
   Map<int, String> _photoTags = Map<int, String>();
   Map<int, VoxTagInterface> _selected = Map<int, VoxTagInterface>();
   Map<int, VoxTagInterface> _taggedPhotos = Map<int, VoxTagInterface>();
+  final String _filename = "VoxTags.json";
+
+  VoxTags() {
+    load(_filename);
+  }
+
   @override
   List<VoxTagInterface> allTaggedPhotos() {
     // TODO: implement allTaggedPhotos
@@ -98,7 +105,8 @@ class VoxTags implements VoxTagsInterface {
 
   @override
   void load(String filename) {
-    // TODO: implement load
+    TagsStorage storage = TagsStorage(filename: _filename);
+    _photoTags = storage.load();
   }
 
   @override
@@ -113,7 +121,8 @@ class VoxTags implements VoxTagsInterface {
 
   @override
   void save(String filename) {
-    // TODO: implement save
+    TagsStorage storage = TagsStorage(filename: _filename);
+    storage.save(voxTags: _photoTags);
   }
 
   @override

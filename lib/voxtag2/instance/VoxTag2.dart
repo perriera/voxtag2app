@@ -5,6 +5,7 @@ import 'package:voxtag2app/voxtag2/system/load_path.dart';
 import 'package:voxtag2app/voxtag2/usecases/app/display_maindisplay/main_display.dart';
 import 'package:voxtag2app/voxtag2/usecases/photo/view_photo.dart';
 import 'package:voxtag2app/voxtag2/usecases/photos/database/PhotoAlbum.dart';
+import 'package:voxtag2app/voxtag2/usecases/voxtags/access/obsolete/TagStorage.dart';
 
 class VoxTag2 extends StatelessWidget {
   static final String root = '/';
@@ -15,7 +16,7 @@ class VoxTag2 extends StatelessWidget {
   void initApp(BuildContext context) {
     LoadPath.init().then((applicationPath) {
       print(applicationPath);
-      // TagsStorage.init(applicationPath);
+      TagsStorage.init(applicationPath);
       // PhotosAlbum().init();
     });
     PhotosAlbum().access(context);
