@@ -1,7 +1,7 @@
 // Real class
 
-import 'VoxTagInterface.dart';
-import 'VoxTagsInterface.dart';
+import 'interfaces/VoxTagInterface.dart';
+import 'interfaces/VoxTagsInterface.dart';
 
 class VoxTags implements TagPhotoInterface {
   Map<int, String> _photoTags = Map<int, String>();

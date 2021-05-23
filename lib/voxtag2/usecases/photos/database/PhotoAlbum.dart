@@ -8,7 +8,7 @@ import 'package:voxtag2app/voxtag2/usecases/photos/database/PhotoAppAccessInterf
 import 'package:voxtag2app/voxtag2/usecases/photos/database/PhotosUpdate.dart';
 import 'package:voxtag2app/voxtag2/usecases/voxtags/interfaces/VoxTagInterface.dart';
 
-import '../../voxtags/interfaces/VoxTag.dart';
+import '../../voxtags/VoxTag.dart';
 
 StreamController<PermissionStatus> checkPermissions = BehaviorSubject();
 StreamController<PhotosUpdate> getDescAlbumImg = BehaviorSubject();

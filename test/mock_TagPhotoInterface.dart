@@ -3,7 +3,7 @@
 import 'package:mockito/mockito.dart';
 import 'package:test/test.dart';
 import 'package:voxtag2app/voxtag2/usecases/voxtags/interfaces/VoxTagInterface.dart';
-import 'package:voxtag2app/voxtag2/usecases/voxtags/interfaces/VoxTags.dart';
+import 'package:voxtag2app/voxtag2/usecases/voxtags/VoxTags.dart';
 import 'package:voxtag2app/voxtag2/usecases/voxtags/interfaces/VoxTagsInterface.dart';
 
 class MockVoxTags extends Mock implements TagPhotoInterface {}
