@@ -5,19 +5,9 @@ import 'package:test/test.dart';
 import 'package:voxtag2app/voxtag2/usecases/voxtags/interfaces/VoxTagInterface.dart';
 import 'package:voxtag2app/voxtag2/usecases/voxtags/VoxTags.dart';
 import 'package:voxtag2app/voxtag2/usecases/voxtags/interfaces/VoxTagsInterface.dart';
+import 'mock_VoxTag.dart';
 
 class MockVoxTags extends Mock implements TagPhotoInterface {}
-
-class VoxTag implements VoxTagInterface {
-  final String path;
-  VoxTag({this.path}) {
-    this.id = path.hashCode;
-  }
-  @override
-  int id;
-  @override
-  String get thumbPath => path;
-}
 
 void main() {
   VoxTags voxtags;

@@ -18,8 +18,8 @@ void main() {
     voxtags = VoxTags();
     mockVoxTags = MockVoxTags();
     when(mockVoxTags.load(any)).thenAnswer((params) {
-      VoxTagInterface voxtag = params.positionalArguments[0];
-      return voxtags.isTagged(voxtag);
+      String name = params.positionalArguments[0];
+      voxtags.load(name);
     });
     when(mockVoxTags.save(any)).thenAnswer((params) {
       VoxTagInterface voxtag = params.positionalArguments[0];
