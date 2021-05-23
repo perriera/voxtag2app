@@ -1,9 +1,9 @@
-import 'dart:io' as io;
 import 'dart:io';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:voxtag2app/voxtag2/usecases/photo/photo_widget.dart';
+
+import 'photo_widget.dart';
 
 class PhotoLoader extends StatelessWidget {
   static FileImage fileImage;

@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:voxtag2app/voxtag2/instance/Themes.dart';
-import 'package:voxtag2app/voxtag2/usecases/photo/view_photo.dart';
+import 'package:voxtag2app/voxtag2/usecases/photo/view/view_photo.dart';
 import 'package:voxtag2app/voxtag2/usecases/photos/display/photo_tags_base.dart';
 import 'package:voxtag2app/voxtag2/usecases/voxtags/VoxTag.dart';
 import 'package:voxtag2app/voxtag2/usecases/voxtags/VoxTags.dart';

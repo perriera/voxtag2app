@@ -1,7 +1,8 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:voxtag2app/voxtag2/extensions/NavBarButton.dart';
-import 'package:voxtag2app/voxtag2/usecases/photos/database/PhotoAlbum.dart';
+import 'package:voxtag2app/voxtag2/usecases/photo/take/take_photo.dart';
 
 class MoreOptionsButton extends StatelessWidget {
   const MoreOptionsButton({
@@ -14,8 +15,21 @@ class MoreOptionsButton extends StatelessWidget {
       icon: FontAwesomeIcons.bars,
       title: "More",
       onTap: () {
-        PhotosAlbum().access(context);
-      }, // RefreshPhotoUseCase(context),
+        showModalBottomSheet(
+            context: context,
+            builder: (context) => Container(
+                  height: 280,
+                  child: ListView(
+                    children: <Widget>[
+                      //    ChangeColumnsButton(),
+                      TakePhotoMenuItem(),
+                      //     ChangeThemeButton(),
+                      //    HelpButton(),
+                      //     AboutVoxTag2Button(),
+                    ],
+                  ),
+                ));
+      },
     );
   }
 }
