@@ -103,8 +103,7 @@ class VoxTags implements VoxTagsInterface {
 
   @override
   bool isSelected(VoxTagInterface photoId) {
-    // TODO: implement isSelected
-    throw UnimplementedError();
+    return _selected.containsKey(photoId.id);
   }
 
   @override
@@ -139,7 +138,7 @@ class VoxTags implements VoxTagsInterface {
 
   @override
   void select(VoxTagInterface photoId) {
-    // TODO: implement select
+    if (!isSelected(photoId)) _selected[photoId.id] = photoId;
   }
 
   @override
@@ -154,7 +153,10 @@ class VoxTags implements VoxTagsInterface {
 
   @override
   void toggleSelect(VoxTagInterface photoId) {
-    // TODO: implement toggleSelect
+    if (isSelected(photoId))
+      unSelect(photoId);
+    else
+      select(photoId);
   }
 
   @override
@@ -168,7 +170,7 @@ class VoxTags implements VoxTagsInterface {
 
   @override
   void unSelect(VoxTagInterface photoId) {
-    // TODO: implement unSelect
+    if (isSelected(photoId)) _selected.remove(photoId.id);
   }
 
   @override
