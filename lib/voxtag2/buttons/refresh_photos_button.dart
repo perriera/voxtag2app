@@ -11,23 +11,12 @@ class RefreshPhotosButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // return StreamBuilder<PhotosUpdate>(
-    //     initialData: PhotosAlbum().photoIds,
-    //     stream: getDescAlbumImg.stream,
-    //     builder: (context, snapshot) {
-    // print(snapshot.data);
     return NavBarButton(
       icon: FontAwesomeIcons.redo,
       title: "Refresh",
       onTap: () {
-        LoadPath.init().then((applicationPath) {
-          print(applicationPath);
-          // TagsStorage.init(applicationPath);
-          // PhotosAlbum().init();
-        });
         PhotosAlbum().access(context);
       }, // RefreshPhotoUseCase(context),
     );
-    // });
   }
 }
