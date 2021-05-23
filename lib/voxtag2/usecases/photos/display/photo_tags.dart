@@ -1,6 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:voxtag2app/voxtag2/instance/Themes.dart';
+import 'package:voxtag2app/voxtag2/usecases/photos/display/photo_tags_base.dart';
 import 'package:voxtag2app/voxtag2/usecases/voxtags/VoxTag.dart';
+import 'package:voxtag2app/voxtag2/usecases/voxtags/VoxTags.dart';
 
 class PhotoTags extends StatelessWidget {
   final VoxTag photoId;
@@ -13,20 +16,19 @@ class PhotoTags extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Text('tags');
-    // var tags = TagsDatabase().tagsList(photoId);
-    // if (tags.isEmpty) return Container();
-    // return thumb
-    //     ? VerticalPhotoTags(
-    //         textStyle: ThemeCatalog.kTagLabelTextStyle.copyWith(
-    //           fontSize: 15.0,
-    //         ),
-    //         tags: tags)
-    //     : HorizontalPhotoTags(
-    //         textStyle: ThemeCatalog.kTagLabelTextStyle.copyWith(
-    //           fontSize: 30.0,
-    //         ),
-    //         tags: tags);
+    var tags = VoxTags().tagsList(photoId);
+    if (tags.isEmpty) return Container();
+    return thumb
+        ? VerticalPhotoTags(
+            textStyle: ThemeCatalog.kTagLabelTextStyle.copyWith(
+              fontSize: 15.0,
+            ),
+            tags: tags)
+        : HorizontalPhotoTags(
+            textStyle: ThemeCatalog.kTagLabelTextStyle.copyWith(
+              fontSize: 30.0,
+            ),
+            tags: tags);
   }
 }
 
