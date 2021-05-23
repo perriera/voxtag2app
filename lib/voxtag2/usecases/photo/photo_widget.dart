@@ -16,14 +16,9 @@ class PhotoWidget extends StatelessWidget {
     return Column(
       children: [
         Expanded(
-          child: image,
+          child: Center(child: image),
         ),
-        GestureDetector(
-          onTap: () {
-            print('hello');
-          },
-          child: PhotoTagsPhoto(photoId: photoId),
-        ),
+        PhotoTagsPhoto(photoId: photoId),
       ],
     );
   }
