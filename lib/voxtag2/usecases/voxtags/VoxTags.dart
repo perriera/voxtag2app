@@ -25,6 +25,11 @@ class VoxTags implements VoxTagsInterface {
   }
 
   @override
+  bool anySelected() {
+    return _selected.isNotEmpty;
+  }
+
+  @override
   List<VoxTagInterface> allTaggedPhotos() {
     // TODO: implement allTaggedPhotos
     throw UnimplementedError();

@@ -285,6 +285,12 @@ class TagsDatabase implements VoxTagsInterface {
     // TODO: implement instance
     throw UnimplementedError();
   }
+
+  @override
+  bool anySelected() {
+    // TODO: implement anySelected
+    throw UnimplementedError();
+  }
 }
 
 // String tagValue(TagInterface photoEntry);

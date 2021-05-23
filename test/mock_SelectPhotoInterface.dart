@@ -2,9 +2,9 @@
 // ignore_for_file: unawaited_futures
 import 'package:mockito/mockito.dart';
 import 'package:test/test.dart';
+import 'package:voxtag2app/voxtag2/usecases/voxtags/interfaces/SelectPhotoInterface.dart';
 import 'package:voxtag2app/voxtag2/usecases/voxtags/interfaces/VoxTagInterface.dart';
 import 'package:voxtag2app/voxtag2/usecases/voxtags/VoxTags.dart';
-import 'package:voxtag2app/voxtag2/usecases/voxtags/interfaces/VoxTagsInterface.dart';
 import 'mock_VoxTag.dart';
 
 class MockVoxTags extends Mock implements SelectPhotoInterface {}
@@ -33,19 +33,27 @@ void main() {
       VoxTagInterface voxtag = params.positionalArguments[0];
       voxtags.toggleSelect(voxtag);
     });
+    when(mockVoxTags.anySelected()).thenAnswer((params) {
+      return voxtags.anySelected();
+    });
   });
 
   test("SelectPhotoInterface", () {
     // Interact with the mock object.
     VoxTag a = VoxTag(path: "a");
     expect(mockVoxTags.isSelected(a), false);
+    expect(mockVoxTags.anySelected(), false);
     mockVoxTags.select(a);
     expect(mockVoxTags.isSelected(a), true);
+    expect(mockVoxTags.anySelected(), true);
     mockVoxTags.unSelect(a);
     expect(mockVoxTags.isSelected(a), false);
+    expect(mockVoxTags.anySelected(), false);
     mockVoxTags.toggleSelect(a);
     expect(mockVoxTags.isSelected(a), true);
+    expect(mockVoxTags.anySelected(), true);
     mockVoxTags.toggleSelect(a);
     expect(mockVoxTags.isSelected(a), false);
+    expect(mockVoxTags.anySelected(), false);
   });
 }
