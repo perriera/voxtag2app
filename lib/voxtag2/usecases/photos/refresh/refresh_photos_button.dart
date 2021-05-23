@@ -20,7 +20,7 @@ class RefreshPhotosButton extends StatelessWidget {
     // print(snapshot.data);
     return NavBarButton(
       icon: FontAwesomeIcons.redo,
-      title: "Update",
+      title: "Refresh",
       onTap: () {
         LoadPath.init().then((applicationPath) {
           print(applicationPath);
