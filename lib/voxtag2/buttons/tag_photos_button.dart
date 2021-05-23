@@ -11,7 +11,7 @@ class TagPhotosButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return NavBarButton(
-      icon: FontAwesomeIcons.redo,
+      icon: FontAwesomeIcons.tag,
       title: "Tag",
       onTap: () {
         PhotosAlbum().access(context);
@@ -19,3 +19,18 @@ class TagPhotosButton extends StatelessWidget {
     );
   }
 }
+
+// class TagPhotosButton extends StatelessWidget {
+//   const TagPhotosButton({
+//     Key key,
+//   }) : super(key: key);
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return NavBarButton(
+//       icon: FontAwesomeIcons.tag,
+//       title: 'Tag',
+//       onTap: () => TagPhotosUseCase(context),
+//     );
+//   }
+// }

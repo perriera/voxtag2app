@@ -11,7 +11,7 @@ class SearchTagsButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return NavBarButton(
-      icon: FontAwesomeIcons.redo,
+      icon: FontAwesomeIcons.search,
       title: "Search",
       onTap: () {
         PhotosAlbum().access(context);

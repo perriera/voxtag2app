@@ -1,5 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:voxtag2app/voxtag2/buttons/more_options_button.dart';
+import 'package:voxtag2app/voxtag2/buttons/search_tags_button.dart';
+import 'package:voxtag2app/voxtag2/buttons/tag_photos_button.dart';
 import 'package:voxtag2app/voxtag2/instance/Themes.dart';
 import 'package:voxtag2app/voxtag2/buttons/refresh_photos_button.dart';
 
@@ -14,12 +17,9 @@ class PhotosNavBar extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: <Widget>[
           RefreshPhotosButton(),
-          RefreshPhotosButton(),
-          RefreshPhotosButton(),
-          RefreshPhotosButton(),
-          // TagPhotosButton(),
-          // SearchButton(),
-          // PhotosMoreButton(),
+          TagPhotosButton(),
+          SearchTagsButton(),
+          MoreOptionsButton(),
         ],
       ),
     );
