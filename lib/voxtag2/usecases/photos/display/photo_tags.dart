@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:voxtag2app/voxtag2/usecases/photos/database/VoxTag.dart';
+import 'package:voxtag2app/voxtag2/usecases/voxtags/interfaces/VoxTag.dart';
 
 class PhotoTags extends StatelessWidget {
   final VoxTag photoId;

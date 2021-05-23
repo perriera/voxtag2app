@@ -5,7 +5,7 @@ import 'package:photo_album_manager/photo_album_manager.dart';
 import 'package:voxtag2app/voxtag2/instance/Themes.dart';
 import 'package:voxtag2app/voxtag2/usecases/app/display_maindisplay/app_bar.dart';
 import 'package:voxtag2app/voxtag2/usecases/app/display_maindisplay/nav_bar.dart';
-import 'package:voxtag2app/voxtag2/usecases/photos/database/VoxTag.dart';
+import 'package:voxtag2app/voxtag2/usecases/voxtags/interfaces/VoxTag.dart';
 
 import 'photo_loader.dart';
 // import 'package:voxtag2app/voxtag3/app/themes.dart';
