@@ -25,13 +25,19 @@ class PhotoLoader extends StatelessWidget {
           Duration(seconds: 0),
           () async {
             try {
-              var fi = FileImage(io.File(filename));
-              PhotoLoader.fileImage = fi;
-              previousFileName = filename;
-              return pi.PhotoWidget(
-                fileImage: fi,
-                photoId: PhotoViewer.voxTag,
+              // var fi = FileImage(io.File(filename));
+              // PhotoLoader.fileImage = fi;
+              // previousFileName = filename;
+              // print(filename);
+              var img2 = Image.file(
+                File(filename),
+                fit: BoxFit.contain,
               );
+              return img2;
+              // return pi.PhotoWidget(
+              //   fileImage: fi,
+              //   photoId: PhotoViewer.voxTag,
+              // );
             } catch (error) {
               var msg = 'PhotoLoader:future() $error';
               print(msg);
