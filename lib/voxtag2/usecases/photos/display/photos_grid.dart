@@ -1,13 +1,14 @@
+import 'dart:io' as io;
+
 import 'package:flutter/cupertino.dart';
 import 'package:voxtag2app/voxtag2/usecases/photos/access/view_status.dart';
 import 'package:voxtag2app/voxtag2/usecases/photos/database/GridSizeInterface.dart';
 import 'package:voxtag2app/voxtag2/usecases/photos/database/GridSizeUpdate.dart';
 import 'package:voxtag2app/voxtag2/usecases/photos/database/PhotoAlbum.dart';
 import 'package:voxtag2app/voxtag2/usecases/photos/database/PhotosUpdate.dart';
-import 'package:voxtag2app/voxtag2/usecases/voxtags/VoxTagInterface.dart';
 import 'package:voxtag2app/voxtag2/usecases/photos/display/photos_spinner.dart';
 import 'package:voxtag2app/voxtag2/usecases/photos/display/photos_thumbnail.dart';
-import 'dart:io' as io;
+import 'package:voxtag2app/voxtag2/usecases/voxtags/interfaces/VoxTagInterface.dart';
 
 // class PhotosGrid extends StatelessWidget {
 //   @override

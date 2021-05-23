@@ -8,16 +8,16 @@
 
 import 'package:voxtag2app/voxtag2/usecases/photos/database/PhotoAlbum.dart';
 import 'package:voxtag2app/voxtag2/usecases/photos/database/PhotosUpdate.dart';
-import 'package:voxtag2app/voxtag2/usecases/tags/database/obsolete/TagStorage.dart';
-import 'package:voxtag2app/voxtag2/usecases/voxtags/VoxTagInterface.dart';
+import 'package:voxtag2app/voxtag2/usecases/voxtags/database/obsolete/TagStorage.dart';
+import 'package:voxtag2app/voxtag2/usecases/voxtags/interfaces/VoxTagInterface.dart';
 
-import '../TagsInterface.dart';
 import '../../../../extensions/CapExtensions.dart';
+import '../../interfaces/VoxTagsInterface.dart';
 
 ///
 /// TagsDatabase
 ///
-class TagsDatabase implements TagsInterface {
+class TagsDatabase implements VoxTagsInterface {
   static TagsDatabase _instance;
   Map<int, String> photoTags;
   Map<int, VoxTagInterface> selected;

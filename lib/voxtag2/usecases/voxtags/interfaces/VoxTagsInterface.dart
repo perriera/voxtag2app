@@ -1,4 +1,4 @@
-import 'package:voxtag2app/voxtag2/usecases/voxtags/VoxTagInterface.dart';
+import 'VoxTagInterface.dart';
 
 ///photosTagged
 /// TagsInterface
@@ -72,4 +72,4 @@ abstract class TagsB extends TagsA with SelectPhotoInterface {}
 
 abstract class TagsC extends TagsB with TagManagementInterface {}
 
-abstract class TagsInterface extends TagsC with TagPhotoInterface {}
+abstract class VoxTagsInterface extends TagsC with TagPhotoInterface {}
