@@ -26,17 +26,23 @@ void main() {
       String tags = params.positionalArguments[1];
       voxtags.tag(voxtag, tags);
     });
+    when(mockVoxTags.tagsList(any)).thenAnswer((params) {
+      VoxTagInterface voxtag = params.positionalArguments[0];
+      return voxtags.tagsList(voxtag);
+    });
   });
 
   test("isTagged on an empty set", () {
     // Interact with the mock object.
     VoxTag a = VoxTag(path: "a");
     expect(mockVoxTags.isTagged(a), false);
+    expect(mockVoxTags.tagsList(a).length, 0);
   });
   test("isTagged on 1 item in set", () {
     // Interact with the mock object.
     VoxTag a = VoxTag(path: "a");
     mockVoxTags.tag(a, "alpha");
     expect(mockVoxTags.isTagged(a), true);
+    expect(mockVoxTags.tagsList(a).length, 1);
   });
 }

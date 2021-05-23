@@ -55,14 +55,18 @@ class VoxTags implements VoxTagsInterface {
 
   @override
   String tags(VoxTagInterface photoId) {
-    // TODO: implement tags
-    throw UnimplementedError();
+    if (!isTagged(photoId)) return "";
+    return _photoTags[photoId.id];
   }
 
   @override
   List<String> tagsList(VoxTagInterface photoId) {
-    // TODO: implement tagsList
-    throw UnimplementedError();
+    String _tags = tags(photoId);
+    if (_tags != null && _tags.trim().length > 0) {
+      List<String> result = _tags.trim().split(" ");
+      return result;
+    } else
+      return List<String>();
   }
 
   @override
@@ -105,8 +109,12 @@ class VoxTags implements VoxTagsInterface {
 
   @override
   void load(String filename) {
-    TagsStorage storage = TagsStorage(filename: _filename);
-    _photoTags = storage.load();
+    try {
+      TagsStorage storage = TagsStorage(filename: _filename);
+      _photoTags = storage.load();
+    } catch (error) {
+      print(error);
+    }
   }
 
   @override
@@ -121,8 +129,12 @@ class VoxTags implements VoxTagsInterface {
 
   @override
   void save(String filename) {
-    TagsStorage storage = TagsStorage(filename: _filename);
-    storage.save(voxTags: _photoTags);
+    try {
+      TagsStorage storage = TagsStorage(filename: _filename);
+      storage.save(voxTags: _photoTags);
+    } catch (error) {
+      print(error);
+    }
   }
 
   @override
