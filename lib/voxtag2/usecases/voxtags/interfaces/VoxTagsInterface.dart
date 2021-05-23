@@ -72,4 +72,6 @@ abstract class TagsB extends TagsA with SelectPhotoInterface {}
 
 abstract class TagsC extends TagsB with TagManagementInterface {}
 
-abstract class VoxTagsInterface extends TagsC with TagPhotoInterface {}
+abstract class VoxTagsInterface extends TagsC with TagPhotoInterface {
+  VoxTagsInterface get instance;
+}

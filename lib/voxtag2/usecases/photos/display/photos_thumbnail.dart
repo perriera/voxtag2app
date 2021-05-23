@@ -4,6 +4,7 @@ import 'package:voxtag2app/voxtag2/instance/VoxTag2.dart';
 import 'package:voxtag2app/voxtag2/usecases/photo/view_photo.dart';
 import 'package:voxtag2app/voxtag2/usecases/voxtags/VoxTag.dart';
 import 'package:voxtag2app/voxtag2/usecases/photos/display/photo_tags.dart';
+import 'package:voxtag2app/voxtag2/usecases/voxtags/VoxTags.dart';
 
 class PhotoThumbnail extends StatefulWidget {
   final AsyncSnapshot<FileImage> snapshot;
@@ -24,7 +25,7 @@ class _PhotoThumbnailState extends State<PhotoThumbnail> {
     return GestureDetector(
       onTap: () {
         setState(() {
-          //   TagsDatabase().toggleSelect(widget.photoId);
+          VoxTags().instance.toggleSelect(widget.photoId);
         });
       },
       onDoubleTap: () {
@@ -34,10 +35,9 @@ class _PhotoThumbnailState extends State<PhotoThumbnail> {
       child: Container(
         foregroundDecoration: BoxDecoration(
           image: DecorationImage(
-            // image: TagsDatabase().isSelected(widget.photoId)
-            //     ? AssetImage('images/selected/selected4.png')
-            //     : AssetImage('images/selected/transparent.png'),
-            image: AssetImage('images/selected/transparent.png'),
+            image: VoxTags().instance.isSelected(widget.photoId)
+                ? AssetImage('images/selected/selected4.png')
+                : AssetImage('images/selected/transparent.png'),
             fit: BoxFit.fill,
           ),
         ),

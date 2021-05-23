@@ -10,6 +10,16 @@ class VoxTags implements VoxTagsInterface {
   Map<int, VoxTagInterface> _taggedPhotos = Map<int, VoxTagInterface>();
   final String _filename = "VoxTags.json";
 
+  static VoxTagsInterface _instance;
+
+  @override
+  VoxTagsInterface get instance {
+    if (_instance == null) {
+      _instance = VoxTags();
+    }
+    return _instance;
+  }
+
   VoxTags() {
     load(_filename);
   }
