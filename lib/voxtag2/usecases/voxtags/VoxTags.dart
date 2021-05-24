@@ -3,6 +3,7 @@
 import 'access/obsolete/TagStorage.dart';
 import 'interfaces/VoxTagInterface.dart';
 import 'interfaces/VoxTagsInterface.dart';
+import '../../extensions/CapExtensions.dart';
 
 class VoxTags implements VoxTagsInterface {
   Map<int, String> _photoTags = Map<int, String>();
@@ -100,8 +101,19 @@ class VoxTags implements VoxTagsInterface {
 
   @override
   List<String> allTags() {
-    // TODO: implement allTags
-    throw UnimplementedError();
+    List<String> allTags = List<String>();
+    for (var entry in _photoTags.entries) {
+      String tags = entry.value;
+      tags = tags.allWordsInCaps;
+      var words = tags.split(" ");
+      for (var tag in words) {
+        if (tag.length > 0 && !allTags.contains(tag)) {
+          allTags.add(tag);
+        }
+      }
+    }
+    allTags.sort();
+    return allTags;
   }
 
   @override

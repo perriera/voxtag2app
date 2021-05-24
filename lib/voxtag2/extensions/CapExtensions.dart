@@ -1,7 +1,9 @@
 // import 'package:voxtag2app/obsolete/voxtag2/options/options.dart';
 // import 'package:voxtag2app/obsolete/voxtag2/options/reserved_words.dart';
 
+import 'package:flutter/cupertino.dart';
 import 'package:voxtag2app/voxtag2/extensions/ReservedWords.dart';
+import 'package:voxtag2app/voxtag2/instance/Themes.dart';
 
 extension CapExtension on String {
   static int smallestWord = 3;
@@ -177,5 +179,27 @@ extension CapExtension on String {
     newTag = newTag.toLowerCase();
     tagValue = tagValue.replaceAll(oldTag, newTag);
     return tagValue;
+  }
+
+  static fontFactorSize(BuildContext context, String word, bool display) {
+    var width = ThemeCatalog.widthOfScreen(context);
+    var lenght = word.length;
+    double fontSizeFactor = 16.0;
+    double reduceFactor = 10.0;
+    if (lenght > 7) {
+      fontSizeFactor = 15.0;
+      reduceFactor = 6.0;
+    }
+    if (width < 400) {
+      fontSizeFactor -= 2;
+    }
+    int reduceByAnExtra = lenght - 7;
+    if (reduceByAnExtra > 0) {
+      double percentage = (100 - (reduceFactor * reduceByAnExtra)) / 100;
+      fontSizeFactor = fontSizeFactor * percentage;
+//      print(fontSizeFactor);
+    }
+    if (display) fontSizeFactor = fontSizeFactor * 2;
+    return fontSizeFactor;
   }
 }
