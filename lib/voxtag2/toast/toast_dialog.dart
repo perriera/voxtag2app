@@ -32,7 +32,7 @@ class ToastDialog {
     );
 
     Fluttertoast.showToast(
-        msg: "This is Short Toast",
+        msg: "Photo captured",
         toastLength: Toast.LENGTH_SHORT,
         timeInSecForIosWeb: 1);
 
