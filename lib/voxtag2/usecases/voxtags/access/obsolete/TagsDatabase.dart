@@ -21,14 +21,14 @@ class TagsDatabase implements VoxTagsInterface {
   static TagsDatabase _instance;
   Map<int, String> photoTags;
   Map<int, VoxTagInterface> selected;
-  Map<int, VoxTagInterface> photosTagged;
+  // Map<int, VoxTagInterface> photosTagged;
   final String _filename = "TagsDatabase.json";
 
   TagsDatabase() {
     if (_instance == null) {
       photoTags = Map<int, String>();
       selected = Map<int, VoxTagInterface>();
-      photosTagged = Map<int, VoxTagInterface>();
+      // photosTagged = Map<int, VoxTagInterface>();
       _instance = this;
       _instance.load();
     }
@@ -38,7 +38,7 @@ class TagsDatabase implements VoxTagsInterface {
   void tag(VoxTagInterface photoId, String tags) {
     if (isTagged(photoId)) _instance.photoTags.remove(photoId.id);
     _instance.photoTags[photoId.id] = tags;
-    _instance.photosTagged[photoId.id] = photoId;
+    // _instance.photosTagged[photoId.id] = photoId;
   }
 
   @override
@@ -68,8 +68,8 @@ class TagsDatabase implements VoxTagsInterface {
         _instance.photoTags.remove(key);
       }
     }
-    if (_instance.photosTagged.containsKey(key))
-      _instance.photosTagged.remove(key);
+    // if (_instance.photosTagged.containsKey(key))
+    //   _instance.photosTagged.remove(key);
   }
 
   @override
@@ -174,7 +174,7 @@ class TagsDatabase implements VoxTagsInterface {
   void removeAll() {
     _instance.photoTags = Map<int, String>();
     _instance.selected = Map<int, VoxTagInterface>();
-    _instance.photosTagged = Map<int, VoxTagInterface>();
+    // _instance.photosTagged = Map<int, VoxTagInterface>();
   }
 
   @override
@@ -198,9 +198,9 @@ class TagsDatabase implements VoxTagsInterface {
 
   @override
   void align(List<VoxTagInterface> allPhotoIds) {
-    _instance.photosTagged = Map<int, VoxTagInterface>();
-    for (VoxTagInterface photoId in allPhotoIds)
-      if (isTagged(photoId)) _instance.photosTagged[photoId.id] = photoId;
+    //  Map<VoxTagInterface> photosTagged = Map<int, VoxTagInterface>();
+    //   for (VoxTagInterface photoId in allPhotoIds)
+    //     if (isTagged(photoId)) photosTagged[photoId.id] = photoId;
   }
 
   @override
@@ -238,8 +238,8 @@ class TagsDatabase implements VoxTagsInterface {
           int key = photoId.id;
           if (_instance.photoTags.containsKey(key))
             _instance.photoTags.remove(key);
-          if (_instance.photosTagged.containsKey(key))
-            _instance.photosTagged.remove(key);
+          // if (_instance.photosTagged.containsKey(key))
+          //   _instance.photosTagged.remove(key);
           if (_instance.selected != null && _instance.selected.containsKey(key))
             _instance.selected.remove(key);
         }
