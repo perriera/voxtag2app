@@ -18,7 +18,7 @@ class TagPhotosUseCase implements UseCaseInterface {
         builder: (context) => TagPhotosDialog(
           update: (newTag, append) async {
             VoxTags().instance.tagSelected(newTag, append);
-            VoxTags().instance.save("TagsDatabase");
+            VoxTags().instance.save();
             VoxTags().instance.clearSelected();
             PhotosAlbum().access(context);
           },

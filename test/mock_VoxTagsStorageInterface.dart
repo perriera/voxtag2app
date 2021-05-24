@@ -16,25 +16,25 @@ void main() {
     // Create mock object.
     voxtags = VoxTags();
     mockVoxTags = MockVoxTags();
-    when(mockVoxTags.load(any)).thenAnswer((params) {
+    when(mockVoxTags.load()).thenAnswer((params) {
       String name = params.positionalArguments[0];
-      voxtags.load(name);
+      voxtags.load();
     });
-    when(mockVoxTags.save(any)).thenAnswer((params) {
+    when(mockVoxTags.save()).thenAnswer((params) {
       String name = params.positionalArguments[0];
       String tags = params.positionalArguments[1];
-      voxtags.save(name);
+      voxtags.save();
     });
   });
 
   test("isTagged on an empty set", () {
     // Interact with the mock object.
     VoxTag a = VoxTag(path: "a");
-    mockVoxTags.load("a");
+    mockVoxTags.load();
   });
   test("isTagged on 1 item in set", () {
     // Interact with the mock object.
     VoxTag a = VoxTag(path: "a");
-    mockVoxTags.save("a");
+    mockVoxTags.save();
   });
 }

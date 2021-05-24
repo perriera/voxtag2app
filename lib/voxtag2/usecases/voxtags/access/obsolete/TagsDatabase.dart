@@ -22,6 +22,7 @@ class TagsDatabase implements VoxTagsInterface {
   Map<int, String> photoTags;
   Map<int, VoxTagInterface> selected;
   Map<int, VoxTagInterface> photosTagged;
+  final String _filename = "TagsDatabase.json";
 
   TagsDatabase() {
     if (_instance == null) {
@@ -29,7 +30,7 @@ class TagsDatabase implements VoxTagsInterface {
       selected = Map<int, VoxTagInterface>();
       photosTagged = Map<int, VoxTagInterface>();
       _instance = this;
-      _instance.load("TagsDatabase");
+      _instance.load();
     }
   }
 
@@ -150,9 +151,9 @@ class TagsDatabase implements VoxTagsInterface {
   }
 
   @override
-  void load(String filename) {
+  void load() {
     try {
-      TagsStorage dataBase = TagsStorage(filename: filename);
+      TagsStorage dataBase = TagsStorage(filename: _filename);
       _instance.photoTags = dataBase.load();
     } catch (error) {
       print(error);
@@ -160,9 +161,9 @@ class TagsDatabase implements VoxTagsInterface {
   }
 
   @override
-  void save(String filename) {
+  void save() {
     try {
-      TagsStorage dataBase = TagsStorage(filename: filename);
+      TagsStorage dataBase = TagsStorage(filename: _filename);
       dataBase.save(voxTags: _instance.photoTags);
     } catch (error) {
       print(error);

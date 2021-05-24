@@ -8,7 +8,7 @@ abstract class StoreTagInterface {
   // database reset
   //
   void reset();
-  void load(String filename);
-  void save(String filename);
+  void load();
+  void save();
   void align(List<VoxTagInterface> photoIds);
 }

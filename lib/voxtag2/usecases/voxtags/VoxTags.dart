@@ -8,7 +8,7 @@ class VoxTags implements VoxTagsInterface {
   Map<int, String> _photoTags = Map<int, String>();
   Map<int, VoxTagInterface> _selected = Map<int, VoxTagInterface>();
   Map<int, VoxTagInterface> _taggedPhotos = Map<int, VoxTagInterface>();
-  final String _filename = "VoxTags.json";
+  final String _filename = "VoxTags";
 
   static VoxTagsInterface _instance;
 
@@ -16,7 +16,7 @@ class VoxTags implements VoxTagsInterface {
   VoxTagsInterface get instance {
     if (_instance == null) {
       _instance = VoxTags();
-      _instance.load(_filename);
+      _instance.load();
     }
     return _instance;
   }
@@ -40,8 +40,7 @@ class VoxTags implements VoxTagsInterface {
 
   @override
   bool isTagged(VoxTagInterface photoId) {
-    return _photoTags.containsKey(photoId.id) &&
-        _taggedPhotos.containsKey(photoId.id);
+    return _photoTags.containsKey(photoId.id);
   }
 
   @override
@@ -121,7 +120,7 @@ class VoxTags implements VoxTagsInterface {
   }
 
   @override
-  void load(String filename) {
+  void load() {
     try {
       TagsStorage storage = TagsStorage(filename: _filename);
       _photoTags = storage.load();
@@ -141,7 +140,7 @@ class VoxTags implements VoxTagsInterface {
   }
 
   @override
-  void save(String filename) {
+  void save() {
     try {
       TagsStorage storage = TagsStorage(filename: _filename);
       storage.save(voxTags: _photoTags);
