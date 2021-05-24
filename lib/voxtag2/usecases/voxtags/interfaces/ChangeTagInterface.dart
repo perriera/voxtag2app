@@ -7,6 +7,4 @@ abstract class ChangeTagInterface {
   //
   // group TagManagementInterface methods
   //
-  List<String> allTags();
-  int get totalNumberOfTags;
 }

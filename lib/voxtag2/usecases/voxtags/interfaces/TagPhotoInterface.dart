@@ -18,4 +18,6 @@ abstract class TagPhotoInterface {
   //
   List<VoxTagInterface> allTaggedPhotos();
   List<VoxTagInterface> searchTags(String tags, bool andOr);
+  List<String> allTags();
+  int get totalNumberOfTags;
 }
