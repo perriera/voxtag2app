@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:voxtag2app/voxtag2/extensions/NavBarButton.dart';
-import 'package:voxtag2app/voxtag2/usecases/photos/database/PhotoAlbum.dart';
+import 'package:voxtag2app/voxtag2/usecases/photo/tag/tag_photos_usecase.dart';
 
 class TagPhotosButton extends StatelessWidget {
   const TagPhotosButton({
@@ -13,9 +13,7 @@ class TagPhotosButton extends StatelessWidget {
     return NavBarButton(
       icon: FontAwesomeIcons.tag,
       title: "Tag",
-      onTap: () {
-        PhotosAlbum().access(context);
-      }, // RefreshPhotoUseCase(context),
+      onTap: () => TagPhotosUseCase(context), // RefreshPhotoUseCase(context),
     );
   }
 }

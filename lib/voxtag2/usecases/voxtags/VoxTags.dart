@@ -16,12 +16,9 @@ class VoxTags implements VoxTagsInterface {
   VoxTagsInterface get instance {
     if (_instance == null) {
       _instance = VoxTags();
+      _instance.load(_filename);
     }
     return _instance;
-  }
-
-  VoxTags() {
-    load(_filename);
   }
 
   @override
@@ -36,8 +33,9 @@ class VoxTags implements VoxTagsInterface {
   }
 
   @override
-  void append(VoxTagInterface photoId, String tags) {
-    // TODO: implement append
+  void append(VoxTagInterface photoId, String newTag) {
+    var update = (tags(photoId) + " " + newTag).trim();
+    tag(photoId, update);
   }
 
   @override
@@ -96,8 +94,9 @@ class VoxTags implements VoxTagsInterface {
 
   @override
   List<VoxTagInterface> allSelectedPhotos() {
-    // TODO: implement allSelectedPhotos
-    throw UnimplementedError();
+    List<VoxTagInterface> list = [];
+    for (VoxTagInterface photoId in _selected.values) list.add(photoId);
+    return list;
   }
 
   @override
@@ -113,7 +112,7 @@ class VoxTags implements VoxTagsInterface {
 
   @override
   void clearSelected() {
-    // TODO: implement clearSelected
+    _selected = Map<int, VoxTagInterface>();
   }
 
   @override
@@ -162,8 +161,13 @@ class VoxTags implements VoxTagsInterface {
   }
 
   @override
-  void tagSelected(String tags, bool append) {
-    // TODO: implement tagSelected
+  void tagSelected(String tags, bool add) {
+    List<VoxTagInterface> list = allSelectedPhotos();
+    for (VoxTagInterface photoId in list)
+      if (add)
+        append(photoId, tags);
+      else
+        tag(photoId, tags);
   }
 
   @override
