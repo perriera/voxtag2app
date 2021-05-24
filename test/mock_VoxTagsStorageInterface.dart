@@ -3,14 +3,14 @@
 import 'package:mockito/mockito.dart';
 import 'package:test/test.dart';
 import 'package:voxtag2app/voxtag2/usecases/voxtags/VoxTags.dart';
-import 'package:voxtag2app/voxtag2/usecases/voxtags/interfaces/VoxTagsStorageInterface.dart';
+import 'package:voxtag2app/voxtag2/usecases/voxtags/interfaces/StoreTagInterface.dart';
 import 'mock_VoxTag.dart';
 
-class MockVoxTags extends Mock implements VoxTagsStorageInterface {}
+class MockVoxTags extends Mock implements StoreTagInterface {}
 
 void main() {
   VoxTags voxtags;
-  VoxTagsStorageInterface mockVoxTags;
+  StoreTagInterface mockVoxTags;
 
   setUp(() {
     // Create mock object.

@@ -3,7 +3,7 @@ import 'VoxTagInterface.dart';
 ///photosTagged
 /// TagsInterface
 ///
-abstract class VoxTagsStorageInterface {
+abstract class StoreTagInterface {
   //
   // database reset
   //

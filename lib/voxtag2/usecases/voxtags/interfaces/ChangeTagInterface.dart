@@ -1,4 +1,4 @@
-abstract class TagManagementInterface {
+abstract class ChangeTagInterface {
   //
   // individual TagManagementInterface methods
   //
