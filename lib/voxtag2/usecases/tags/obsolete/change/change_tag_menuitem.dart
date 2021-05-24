@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:voxtag2app/voxtag2/instance/Themes.dart';
 
-import '../change_tag_usecase.dart';
+import 'change_tag_usecase.dart';
 // import 'package:voxtag2app/voxtag3/app/themes.dart';
 
 // import 'change_tag_usecase.dart';

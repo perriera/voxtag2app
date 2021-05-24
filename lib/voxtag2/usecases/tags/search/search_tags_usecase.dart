@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:voxtag2app/voxtag2/toast/toast_dialog.dart';
 import 'package:voxtag2app/voxtag2/usecases/UseCaseInterface.dart';
 
-import 'TagUpdateModeInterface.dart';
+import '../obsolete/TagUpdateModeInterface.dart';
 import 'search_tags_actions.dart';
 
 class SearchTagsUseCase implements UseCaseInterface {

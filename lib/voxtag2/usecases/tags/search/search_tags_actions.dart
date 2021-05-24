@@ -6,7 +6,7 @@ import 'package:voxtag2app/voxtag2/usecases/photos/database/PhotoAlbum.dart';
 import 'package:voxtag2app/voxtag2/usecases/photos/database/PhotosUpdate.dart';
 import 'package:voxtag2app/voxtag2/usecases/voxtags/VoxTags.dart';
 
-import 'TagUpdateModeInterface.dart';
+import '../obsolete/TagUpdateModeInterface.dart';
 
 /// TagsEditModeSearch
 /// When a displayed tag is clicked a tag search on the

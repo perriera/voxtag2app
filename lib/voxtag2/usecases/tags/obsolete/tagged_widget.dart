@@ -1,7 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-
-import '../search/tags_widget.dart';
+import 'package:voxtag2app/voxtag2/usecases/tags/obsolete/tags_widget.dart';
 
 class TaggedWidget extends StatelessWidget {
   final Function onTap;

@@ -1,9 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:voxtag2app/voxtag2/toast/toast_dialog.dart';
 
-import '../../UseCaseInterface.dart';
-import 'TagUpdateModeInterface.dart';
-import 'change/change_tag_actiond.dart';
+import '../../../UseCaseInterface.dart';
+import '../TagUpdateModeInterface.dart';
+import 'change_tag_actiond.dart';
 
 class ChangeTagUseCase implements UseCaseInterface {
   final BuildContext context;
