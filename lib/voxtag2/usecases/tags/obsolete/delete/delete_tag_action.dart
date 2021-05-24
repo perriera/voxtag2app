@@ -4,8 +4,8 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:voxtag2app/voxtag2/usecases/photos/database/GridSizeUpdate.dart';
 import 'package:voxtag2app/voxtag2/usecases/voxtags/VoxTags.dart';
 
-import 'TagUpdateModeInterface.dart';
-import 'delete_tag_dialog.dart';
+import '../TagUpdateModeInterface.dart';
+import '../delete_tag_dialog.dart';
 
 ///
 /// TagsEditModeDelete

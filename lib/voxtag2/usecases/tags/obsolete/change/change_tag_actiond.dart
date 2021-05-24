@@ -5,7 +5,7 @@ import 'package:voxtag2app/voxtag2/toast/toast_dialog.dart';
 import 'package:voxtag2app/voxtag2/usecases/photos/database/GridSizeUpdate.dart';
 import 'package:voxtag2app/voxtag2/usecases/voxtags/VoxTags.dart';
 
-import 'TagUpdateModeInterface.dart';
+import '../TagUpdateModeInterface.dart';
 import 'change_tag_dialog1.dart';
 import 'change_tag_dialog2.dart';
 

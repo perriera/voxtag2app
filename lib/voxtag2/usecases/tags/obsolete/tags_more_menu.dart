@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'change_columns_button.dart';
 import 'change_tag_menuitem.dart';
 import 'delete_tag_menuitem.dart';
-import 'search_tags_menuitem.dart';
+import '../search/search_tags_menuitem.dart';
 
 class TagsMoreMenu extends StatelessWidget {
   @override

@@ -3,7 +3,7 @@ import 'package:voxtag2app/voxtag2/extensions/NavBarButton.dart';
 import 'package:voxtag2app/voxtag2/toast/toast_dialog.dart';
 
 import 'TagUpdateModeInterface.dart';
-import 'search_tags_actions.dart';
+import '../search/search_tags_actions.dart';
 
 class TagActionButton extends StatelessWidget {
   const TagActionButton({
