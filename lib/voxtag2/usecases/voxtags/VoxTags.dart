@@ -128,7 +128,25 @@ class VoxTags implements VoxTagsInterface {
 
   @override
   void changeTag(String oldTag, String newTag) {
-    // TODO: implement changeTag
+    assertCheckParameters(oldTag, newTag);
+    for (VoxTagInterface photoId in _instance.allTaggedPhotos()) {
+      var tags = _instance.tags(photoId).toLowerCase();
+      if (tags.length > 0) {
+        if (tags.containsWord(oldTag.toLowerCase(), false)) {
+          int key = photoId.id;
+          tags = oldTag
+              .toLowerCase()
+              .replaceAll(oldTag.toLowerCase(), newTag.toLowerCase());
+          if (_photoTags.containsKey(key)) _photoTags.remove(key);
+          _photoTags[key] = tags;
+        }
+      }
+    }
+  }
+
+  void assertCheckParameters(String oldTag, String newTag) {
+    if (oldTag == newTag) throw 'No changes made';
+    if (newTag.length == 0) throw 'No change specified';
   }
 
   @override

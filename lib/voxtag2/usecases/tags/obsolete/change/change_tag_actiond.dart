@@ -35,7 +35,7 @@ class ChangeTagAction implements TagUpdateModeInterface {
                   if (yesNo) {
                     try {
                       VoxTags().instance.changeTag(oldTag, changeTag);
-                      VoxTags().instance..save();
+                      VoxTags().instance.save();
                       GridSizeUpdate.refresh();
                     } catch (e) {
                       ToastDialog(context).display(e, false);
