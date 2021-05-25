@@ -7,7 +7,6 @@ import 'package:voxtag2app/voxtag2/usecases/photos/database/GridSizeUpdate.dart'
 import 'package:voxtag2app/voxtag2/usecases/voxtags/VoxTags.dart';
 
 import 'tagged_widget.dart';
-import 'package:toast/toast.dart';
 
 class TagsGrid extends StatelessWidget {
   @override
@@ -48,9 +47,15 @@ class TagsGrid extends StatelessWidget {
   }
 
   List<Widget> listTags(BuildContext context, List<String> allTags) {
-    List<TaggedWidget> widgets = [];
+    List<Expanded> widgets = [];
     for (String tag in allTags) {
-      widgets.add(TaggedWidget(tag: tag));
+      widgets.add(Expanded(
+          child: TaggedWidget(
+        tag: tag,
+        onTap: () {
+          print('hello');
+        },
+      )));
     }
     return widgets;
   }
