@@ -51,7 +51,15 @@ class VoxTags implements VoxTagsInterface {
 
   @override
   void remove(VoxTagInterface photoId, String tag) {
-    // TODO: implement remove
+    var key = photoId.id;
+    if (_photoTags[key].contains(tag)) {
+      var oldTag = _photoTags[key].trim() + " ";
+      oldTag = oldTag.replaceAll(tag + " ", "").trim();
+      _photoTags[key] = oldTag;
+      if (_instance.totalNumberOfTags == 0) {
+        _photoTags.remove(key);
+      }
+    }
   }
 
   @override
@@ -171,7 +179,17 @@ class VoxTags implements VoxTagsInterface {
 
   @override
   void removeTag(String tag) {
-    // TODO: implement removeTag
+    for (VoxTagInterface photoId in _instance.allTaggedPhotos()) {
+      var tags = _instance.tags(photoId).toLowerCase();
+      if (tags.length > 0) {
+        if (tags.containsWord(tag.toLowerCase(), false)) {
+          int key = photoId.id;
+          if (_photoTags.containsKey(key)) _photoTags.remove(key);
+          if (_selected != null && _selected.containsKey(key))
+            _selected.remove(key);
+        }
+      }
+    }
   }
 
   @override
