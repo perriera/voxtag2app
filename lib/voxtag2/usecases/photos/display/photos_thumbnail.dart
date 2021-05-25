@@ -29,8 +29,8 @@ class _PhotoThumbnailState extends State<PhotoThumbnail> {
         });
       },
       onDoubleTap: () {
-        PhotoViewer.voxTag = widget.photoId;
-        Navigator.pushNamed(context, VoxTag2.photoView);
+        PhotoDisplay.voxTag = widget.photoId;
+        Navigator.pushNamed(context, VoxTag2.displayPhoto);
       },
       child: Container(
         foregroundDecoration: BoxDecoration(

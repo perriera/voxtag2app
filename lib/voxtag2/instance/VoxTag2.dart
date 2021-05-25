@@ -9,7 +9,7 @@ import 'package:voxtag2app/voxtag2/usecases/voxtags/access/obsolete/TagStorage.d
 
 class VoxTag2 extends StatelessWidget {
   static final String root = '/';
-  static final String photoView = '/photoView';
+  static final String displayPhoto = '/displayPhoto';
   static final String photoShare = '/photoShare';
   static final String photoSearch = '/photoSearch';
   bool initialized = false;
@@ -54,7 +54,7 @@ class VoxTag2 extends StatelessWidget {
             // ),
             routes: <String, WidgetBuilder>{
               VoxTag2.root: (context) => MainDisplay(),
-              VoxTag2.photoView: (context) => PhotoViewer(),
+              VoxTag2.displayPhoto: (context) => PhotoDisplay(),
               // VoxTag3.photoShare: (context) => PhotoShare(),
               // VoxTag3.photoSearch: (context) => TagsSearchLayout(),
             },

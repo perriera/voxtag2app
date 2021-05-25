@@ -17,7 +17,7 @@ class PhotoTags extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var id = (photoId != null ? photoId : PhotoViewer.voxTag);
+    var id = (photoId != null ? photoId : PhotoDisplay.voxTag);
     var tags = VoxTags().instance.tagsList(id);
     if (tags.isEmpty) return Container();
     return thumb
