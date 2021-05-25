@@ -60,12 +60,12 @@ class VoxTags implements VoxTagsInterface {
   }
 
   @override
-  List<VoxTagInterface> searchTags(String tags, bool andOr) {
+  List<VoxTagInterface> searchTags(String query, bool andOr) {
     List<VoxTagInterface> list = this.allTaggedPhotos();
     List<VoxTagInterface> results = [];
     for (VoxTagInterface photoId in list) {
       String tags = _photoTags[photoId.id];
-      if (tags.containsWord(tags, andOr)) results.add(photoId);
+      if (query.containsWord(tags, andOr)) results.add(photoId);
     }
     return results;
   }
