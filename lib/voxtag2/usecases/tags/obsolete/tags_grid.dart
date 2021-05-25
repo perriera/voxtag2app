@@ -52,9 +52,6 @@ class TagsGrid extends StatelessWidget {
       widgets.add(Expanded(
           child: TaggedWidget(
         tag: tag,
-        onTap: () {
-          print('hello');
-        },
       )));
     }
     return widgets;

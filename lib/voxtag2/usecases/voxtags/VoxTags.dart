@@ -1,5 +1,7 @@
 // Real class
 
+import 'package:voxtag2app/voxtag2/usecases/photos/database/PhotoAlbum.dart';
+
 import 'access/obsolete/TagStorage.dart';
 import 'interfaces/VoxTagInterface.dart';
 import 'interfaces/VoxTagsInterface.dart';
@@ -29,8 +31,11 @@ class VoxTags implements VoxTagsInterface {
 
   @override
   List<VoxTagInterface> allTaggedPhotos() {
-    // TODO: implement allTaggedPhotos
-    throw UnimplementedError();
+    var allPhotoIds = PhotosAlbum().photoIds;
+    List<VoxTagInterface> list = [];
+    for (var photoId in allPhotoIds.photos)
+      if (isTagged(photoId)) list.add(photoId);
+    return list;
   }
 
   @override
@@ -56,8 +61,13 @@ class VoxTags implements VoxTagsInterface {
 
   @override
   List<VoxTagInterface> searchTags(String tags, bool andOr) {
-    // TODO: implement searchTags
-    throw UnimplementedError();
+    List<VoxTagInterface> list = this.allTaggedPhotos();
+    List<VoxTagInterface> results = [];
+    for (VoxTagInterface photoId in list) {
+      String tags = _photoTags[photoId.id];
+      if (tags.containsWord(tags, andOr)) results.add(photoId);
+    }
+    return results;
   }
 
   @override
