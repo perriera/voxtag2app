@@ -2,18 +2,17 @@ import 'dart:ui';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:voxtag2app/voxtag2/buttons/whole_realm.dart';
 import 'package:voxtag2app/voxtag2/instance/Constants.dart';
 import 'package:voxtag2app/voxtag2/instance/Themes.dart';
 
 import 'app_logo.dart';
 
-class AboutDialogBox extends StatefulWidget {
+class HelpDialogBox extends StatefulWidget {
   @override
-  _AboutDialogBoxState createState() => _AboutDialogBoxState();
+  _HelpDialogBoxState createState() => _HelpDialogBoxState();
 }
 
-class _AboutDialogBoxState extends State<AboutDialogBox> {
+class _HelpDialogBoxState extends State<HelpDialogBox> {
   @override
   Widget build(BuildContext context) {
     return Dialog(
@@ -59,23 +58,20 @@ class _AboutDialogBoxState extends State<AboutDialogBox> {
     return Column(
       mainAxisSize: MainAxisSize.min,
       children: <Widget>[
-        AppLogoWidget(),
-        SizedBox(
-          height: 15,
-        ),
-        WholeRealmWidget(),
-        SizedBox(
-          height: 15,
-        ),
-        Text(
-          "Patent Pending",
-          style: ThemeCatalog.kDialogTitleStyle,
+        Container(
+          width: 200,
+          child: AppLogoWidget(),
         ),
         SizedBox(
           height: 15,
         ),
         Text(
-          "All rights reserved, worldwide.",
+          "Single click on a item to select",
+          style: ThemeCatalog.kAppBarTextStyle,
+          textAlign: TextAlign.center,
+        ),
+        Text(
+          "Double click on a item to open",
           style: ThemeCatalog.kAppBarTextStyle,
           textAlign: TextAlign.center,
         ),
@@ -92,7 +88,7 @@ class _AboutDialogBoxState extends State<AboutDialogBox> {
                 'Ok',
                 style: TextStyle(
                   fontSize: 18,
-                  color: ThemeCatalog.kIconColor,
+                  color: Colors.white,
                 ),
               )),
         ),

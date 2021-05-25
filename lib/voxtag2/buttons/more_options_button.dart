@@ -5,7 +5,9 @@ import 'package:voxtag2app/voxtag2/extensions/NavBarButton.dart';
 import 'package:voxtag2app/voxtag2/usecases/photo/take/take_photo.dart';
 import 'package:voxtag2app/voxtag2/usecases/tags/obsolete/change/change_columns_button.dart';
 
+import 'about_button.dart';
 import 'change_theme_button.dart';
+import 'help_button.dart';
 
 class MoreOptionsButton extends StatelessWidget {
   const MoreOptionsButton({
@@ -27,8 +29,8 @@ class MoreOptionsButton extends StatelessWidget {
                       ChangeColumnsButton(),
                       TakePhotoMenuItem(),
                       ChangeThemeButton(),
-                      //    HelpButton(),
-                      //     AboutVoxTag2Button(),
+                      HelpButton(),
+                      AboutVoxTag2Button(),
                     ],
                   ),
                 ));

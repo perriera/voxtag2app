@@ -32,9 +32,7 @@ class ToastDialog {
     );
 
     Fluttertoast.showToast(
-        msg: "Photo captured",
-        toastLength: Toast.LENGTH_SHORT,
-        timeInSecForIosWeb: 1);
+        msg: msg, toastLength: Toast.LENGTH_SHORT, timeInSecForIosWeb: 1);
 
     //   child: toast,
     //   gravity: ToastGravity.BOTTOM,
