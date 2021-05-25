@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:voxtag2app/voxtag2/buttons/nav_bars/photo_navbar.dart';
 import 'package:voxtag2app/voxtag2/instance/Themes.dart';
 import 'package:voxtag2app/voxtag2/usecases/app/display_maindisplay/app_bar.dart';
 import 'package:voxtag2app/voxtag2/buttons/nav_bars/photos_navbar.dart';

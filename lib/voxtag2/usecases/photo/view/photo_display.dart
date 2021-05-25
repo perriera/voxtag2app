@@ -17,7 +17,7 @@ class PhotoDisplay extends StatelessWidget {
         onTap: () => Navigator.pop(context),
         child: PhotoView(voxTag: voxTag),
       ),
-      bottomNavigationBar: PhotosNavBar(),
+      bottomNavigationBar: PhotoNavBar(voxTag: voxTag),
       backgroundColor: ThemeCatalog.kMainColor,
     );
   }

@@ -9,9 +9,9 @@ import 'package:voxtag2app/voxtag2/usecases/tag/remove/remove_tag_button.dart';
 import 'package:voxtag2app/voxtag2/usecases/voxtags/VoxTag.dart';
 
 class PhotoNavBar extends StatelessWidget {
-  final VoxTag voxtag;
+  final VoxTag voxTag;
 
-  const PhotoNavBar({Key key, this.voxtag}) : super(key: key);
+  const PhotoNavBar({Key key, this.voxTag}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -23,7 +23,7 @@ class PhotoNavBar extends StatelessWidget {
         children: <Widget>[
           RefreshPhotosButton(),
           SharePhotoButton(),
-          RemoveTagButton(voxTag: voxtag),
+          // RemoveTagButton(voxTag: voxTag),
           MoreOptionsButton(),
         ],
       ),
