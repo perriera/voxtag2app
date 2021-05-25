@@ -241,8 +241,7 @@ class VoxTags implements VoxTagsInterface {
   }
 
   @override
-  // TODO: implement totalNumberOfTags
-  int get totalNumberOfTags => throw UnimplementedError();
+  int get totalNumberOfTags => _photoTags.length;
 
   @override
   void unSelect(VoxTagInterface photoId) {

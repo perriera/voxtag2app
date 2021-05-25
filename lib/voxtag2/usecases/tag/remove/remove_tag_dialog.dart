@@ -1,9 +1,12 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:voxtag2app/voxtag2/extensions/PageNavigator.dart';
 import 'package:voxtag2app/voxtag2/instance/Themes.dart';
+import 'package:voxtag2app/voxtag2/instance/VoxTag2.dart';
 import 'package:voxtag2app/voxtag2/usecases/app/display_maindisplay/app_bar.dart';
 import 'package:voxtag2app/voxtag2/usecases/photo/streams/photo_stream.dart';
+import 'package:voxtag2app/voxtag2/usecases/photos/database/PhotoAlbum.dart';
 import 'package:voxtag2app/voxtag2/usecases/photos/display/shadow_tag.dart';
 import 'package:voxtag2app/voxtag2/usecases/tag/remove/remove_tag_navbar.dart';
 import 'package:voxtag2app/voxtag2/usecases/voxtags/VoxTag.dart';
@@ -81,8 +84,10 @@ class _RemoveTagDialogState extends State<RemoveTagDialog> {
       onTap: () {
         VoxTags().instance.remove(voxTag, text);
         VoxTags().instance.save();
-        setState(() {});
-        PhotoStream.refresh();
+        // setState(() {});
+        // PhotoStream.refresh();
+        Navigator.pushNamed(context, VoxTag2.displayPhoto);
+        PhotosAlbum().refresh(context);
       },
     );
   }
