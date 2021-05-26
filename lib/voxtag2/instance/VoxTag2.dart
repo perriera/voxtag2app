@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:instabug_flutter/Instabug.dart';
 import 'package:voxtag2app/voxtag2/instance/Themes.dart';
 import 'package:voxtag2app/voxtag2/system/load_path.dart';
 import 'package:voxtag2app/voxtag2/usecases/app/display_maindisplay/main_display.dart';
@@ -8,12 +9,19 @@ import 'package:voxtag2app/voxtag2/usecases/photo/view/photo_display.dart';
 import 'package:voxtag2app/voxtag2/usecases/photos/database/PhotoAlbum.dart';
 import 'package:voxtag2app/voxtag2/usecases/voxtags/access/obsolete/TagStorage.dart';
 
-class VoxTag2 extends StatelessWidget {
+class VoxTag2 extends StatefulWidget {
   static final String root = '/';
   static final String displayPhoto = '/displayPhoto';
   static final String photoShare = '/photoShare';
   static final String photoSearch = '/photoSearch';
+
+  @override
+  State<VoxTag2> createState() => _VoxTag2State();
+}
+
+class _VoxTag2State extends State<VoxTag2> {
   bool initialized = false;
+
   void initApp(BuildContext context) {
     LoadPath.init().then((applicationPath) {
       print(applicationPath);
@@ -24,7 +32,12 @@ class VoxTag2 extends StatelessWidget {
     initialized = true;
   }
 
-  // This widget is the root of your application.
+  @override
+  void initState() {
+    super.initState();
+    Instabug.start('a79bc45735944cf249dc13944420fa25', [InvocationEvent.shake]);
+  }
+
   @override
   Widget build(BuildContext context) {
     if (!initialized) {
