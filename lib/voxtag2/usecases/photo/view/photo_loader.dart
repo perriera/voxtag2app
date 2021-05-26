@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 import 'photo_widget.dart';
 
 class PhotoLoader extends StatelessWidget {
-  static FileImage fileImage;
+  static Image fileImage;
   static String previousFileName;
   final String filename;
   const PhotoLoader({
@@ -22,11 +22,13 @@ class PhotoLoader extends StatelessWidget {
           Duration(seconds: 0),
           () async {
             try {
-              return PhotoWidget(
-                  image: Image.file(
+              fileImage = Image.file(
                 File(filename),
                 fit: BoxFit.contain,
-              ));
+              );
+              return PhotoWidget(
+                image: fileImage,
+              );
             } catch (error) {
               var msg = 'PhotoLoader:future() $error';
               print(msg);

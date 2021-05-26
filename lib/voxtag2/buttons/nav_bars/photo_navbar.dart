@@ -24,7 +24,7 @@ class PhotoNavBar extends StatelessWidget {
           RefreshPhotosButton(),
           SharePhotoButton(),
           RemoveTagButton(voxTag: voxTag),
-          MoreOptionsButton(),
+          SharePhotoButton(),
         ],
       ),
     );

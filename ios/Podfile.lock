@@ -1,6 +1,10 @@
 PODS:
+  - documents_picker (0.0.1):
+    - Flutter
   - Flutter (1.0.0)
   - flutter_is_emulator (0.0.1):
+    - Flutter
+  - flutter_share (0.0.1):
     - Flutter
   - flutter_statusbarcolor (0.0.1):
     - Flutter
@@ -20,8 +24,10 @@ PODS:
   - Toast (4.0.0)
 
 DEPENDENCIES:
+  - documents_picker (from `.symlinks/plugins/documents_picker/ios`)
   - Flutter (from `Flutter`)
   - flutter_is_emulator (from `.symlinks/plugins/flutter_is_emulator/ios`)
+  - flutter_share (from `.symlinks/plugins/flutter_share/ios`)
   - flutter_statusbarcolor (from `.symlinks/plugins/flutter_statusbarcolor/ios`)
   - fluttertoast (from `.symlinks/plugins/fluttertoast/ios`)
   - gallery_saver (from `.symlinks/plugins/gallery_saver/ios`)
@@ -35,10 +41,14 @@ SPEC REPOS:
     - Toast
 
 EXTERNAL SOURCES:
+  documents_picker:
+    :path: ".symlinks/plugins/documents_picker/ios"
   Flutter:
     :path: Flutter
   flutter_is_emulator:
     :path: ".symlinks/plugins/flutter_is_emulator/ios"
+  flutter_share:
+    :path: ".symlinks/plugins/flutter_share/ios"
   flutter_statusbarcolor:
     :path: ".symlinks/plugins/flutter_statusbarcolor/ios"
   fluttertoast:
@@ -55,8 +65,10 @@ EXTERNAL SOURCES:
     :path: ".symlinks/plugins/photo_album_manager/ios"
 
 SPEC CHECKSUMS:
+  documents_picker: 5af54172fc411009a331391a6264987a852fcef8
   Flutter: 434fef37c0980e73bb6479ef766c45957d4b510c
   flutter_is_emulator: b1d882329a081ea30e0e335f1dbe782f5a34242a
+  flutter_share: 4be0208963c60b537e6255ed2ce1faae61cd9ac2
   flutter_statusbarcolor: 8afb1071ed8c58be929f1e32b36c629771fd2259
   fluttertoast: 6122fa75143e992b1d3470f61000f591a798cc58
   gallery_saver: 9fc173c9f4fcc48af53b2a9ebea1b643255be542
