@@ -10,7 +10,7 @@ import '../../extensions/CapExtensions.dart';
 class VoxTags implements VoxTagsInterface {
   Map<int, String> _photoTags = Map<int, String>();
   Map<int, VoxTagInterface> _selected = Map<int, VoxTagInterface>();
-  Map<int, VoxTagInterface> _taggedPhotos = Map<int, VoxTagInterface>();
+  // Map<int, VoxTagInterface> _taggedPhotos = Map<int, VoxTagInterface>();
   final String _filename = "VoxTags";
 
   static VoxTagsInterface _instance;
@@ -80,7 +80,7 @@ class VoxTags implements VoxTagsInterface {
 
   @override
   void tag(VoxTagInterface photoId, String tags) {
-    _taggedPhotos[photoId.id] = photoId;
+    // _taggedPhotos[photoId.id] = photoId;
     _photoTags[photoId.id] = tags;
   }
 
