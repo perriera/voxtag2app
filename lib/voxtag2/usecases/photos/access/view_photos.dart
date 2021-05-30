@@ -4,10 +4,6 @@ import 'package:photo_album_manager/photo_album_manager.dart';
 import 'package:voxtag2app/voxtag2/usecases/photos/access/view_status.dart';
 import 'package:voxtag2app/voxtag2/usecases/photos/database/PhotoAlbum.dart';
 import 'package:voxtag2app/voxtag2/usecases/photos/display/photos_grid.dart';
-// import 'package:photo_album_manager/photo_album_manager.dart';
-// import 'package:voxtag2app/voxtag3/app/streams.dart';
-// import 'package:voxtag2app/voxtag3/views/photos/usecases/display_photos/photos_grid.dart';
-// import 'package:voxtag2app/voxtag3/views/photos/usecases/display_photos/photos_status.dart';
 
 class PhotosView extends StatefulWidget {
   final BuildContext context;
@@ -35,6 +31,12 @@ class _PhotosViewState extends State<PhotosView> with WidgetsBindingObserver {
   void initState() {
     super.initState();
     WidgetsBinding.instance.addObserver(this);
+  }
+
+  @override
+  void dispose() {
+    WidgetsBinding.instance.removeObserver(this);
+    super.dispose();
   }
 
   @override

@@ -81,7 +81,7 @@ class VoxTags implements VoxTagsInterface {
   @override
   void tag(VoxTagInterface photoId, String tags) {
     // _taggedPhotos[photoId.id] = photoId;
-    _photoTags[photoId.id] = tags;
+    _photoTags[photoId.id] = tags.filteredForVoxTag;
   }
 
   @override
