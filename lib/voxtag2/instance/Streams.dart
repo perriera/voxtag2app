@@ -8,9 +8,3 @@ import 'package:rxdart/rxdart.dart';
 ///
 /// VoxTag2 StreamController instances
 ///
-
-//StreamController<VoxTagsCommands> voxTagsCommand = BehaviorSubject();
-// StreamController<PermissionStatus> checkPermissions = BehaviorSubject();
-//StreamController<String> checkPermissionsError = BehaviorSubject();
-//StreamController<AlbumModelEntity> getOriginalResource = BehaviorSubject();
-//StreamController<String> getOriginalResourceError = BehaviorSubject();

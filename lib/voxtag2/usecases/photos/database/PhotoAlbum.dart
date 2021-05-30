@@ -46,19 +46,23 @@ class PhotosAlbum implements PhotoAppAccessInterface {
     PhotoAlbumManager.getDescAlbumImg().then((photos) {
       var msg = '${photos.length} photos loaded';
       Toast.show(msg, context);
-      PhotosAlbum._photosIds = convert(photos);
+      PhotosAlbum._photosIds = convert(photos, context);
       getDescAlbumImg.add(PhotosAlbum._photosIds);
     }).catchError((error) {
       Toast.show("Photos app access granted", context);
     });
   }
 
-  PhotosUpdate convert(List<AlbumModelEntity> list) {
+  PhotosUpdate convert(List<AlbumModelEntity> list, BuildContext context) {
     List<VoxTagInterface> voxTags = [];
-    for (var item in list) {
-      voxTags.add(VoxTag(entity: item));
-      var id = item.localIdentifier;
-      PhotoAlbumManager.getOriginalResource(id);
+    try {
+      for (var item in list) {
+        voxTags.add(VoxTag(entity: item));
+        var id = item.localIdentifier;
+        //  PhotoAlbumManager.getOriginalResource(id);
+      }
+    } catch (error) {
+      Toast.show(error.toString(), context);
     }
     return PhotosUpdate(voxTags);
   }
