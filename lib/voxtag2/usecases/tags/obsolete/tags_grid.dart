@@ -46,13 +46,18 @@ class TagsGrid extends StatelessWidget {
     if (allTags.length == 0) throw 'Tag some photos first';
   }
 
+  List<Widget> textBoxes(BuildContext context, List<String> allTags) {
+    List<Widget> widgets = [];
+    widgets.add(Expanded(child: Text("Hello")));
+    return widgets;
+  }
+
   List<Widget> listTags(BuildContext context, List<String> allTags) {
-    List<Expanded> widgets = [];
+    List<Widget> widgets = [];
     for (String tag in allTags) {
-      widgets.add(Expanded(
-          child: TaggedWidget(
+      widgets.add(TaggedWidget(
         tag: tag,
-      )));
+      ));
     }
     return widgets;
   }
