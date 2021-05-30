@@ -16,9 +16,7 @@ class RefreshPhotosButton extends StatelessWidget {
       icon: FontAwesomeIcons.redo,
       title: "Refresh",
       onTap: () {
-        PhotosAlbum().access(context);
-        PageNavigator(context, MainDisplay()).jump();
-      }, // RefreshPhotoUseCase(context),
+        PhotosAlbum().refresh(context);
     );
   }
 }
