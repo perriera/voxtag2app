@@ -26,9 +26,8 @@ class _VoxTag2State extends State<VoxTag2> {
     LoadPath.init().then((applicationPath) {
       print(applicationPath);
       TagsStorage.init(applicationPath);
-      // PhotosAlbum().init();
+      PhotosAlbum().access(context);
     });
-    PhotosAlbum().access(context);
     initialized = true;
   }
 
@@ -77,3 +76,12 @@ class _VoxTag2State extends State<VoxTag2> {
         });
   }
 }
+
+// class HelloWorld extends StatelessWidget {
+//   @override
+//   Widget build(BuildContext context) {
+//     return Container(child: Text('hello'),
+
+//     );
+//   }
+// }
