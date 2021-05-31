@@ -3,7 +3,7 @@ import 'package:voxtag2app/voxtag2/toast/toast_dialog.dart';
 
 import '../../UseCaseInterface.dart';
 import '../TagUpdateModeInterface.dart';
-import 'change_tag_actiond.dart';
+import 'change_tag_action.dart';
 
 class ChangeTagUseCase implements UseCaseInterface {
   final BuildContext context;

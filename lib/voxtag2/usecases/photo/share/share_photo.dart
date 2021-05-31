@@ -5,7 +5,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_share/flutter_share.dart';
 import 'package:path_provider/path_provider.dart';
-//import 'package:photo_view/photo_view.dart' as pv;
 import 'package:screenshot/screenshot.dart';
 import 'package:voxtag2app/voxtag2/instance/Themes.dart';
 import 'package:voxtag2app/voxtag2/toast/toast_dialog.dart';
