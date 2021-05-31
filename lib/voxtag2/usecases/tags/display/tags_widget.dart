@@ -2,8 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:voxtag2app/voxtag2/instance/Streams_Obsolete.dart';
 import 'package:voxtag2app/voxtag2/options/Options.dart';
 
-import 'tag_select_widget.dart';
-import 'tag_widget.dart';
+import '../../tag/display/tag_widget.dart';
+import '../../tag/select/tag_select_widget.dart';
 
 class TagsWidget extends StatelessWidget {
   const TagsWidget({

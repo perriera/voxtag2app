@@ -1,9 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:voxtag2app/voxtag2/usecases/tags/obsolete/tags_widget.dart';
+import 'package:voxtag2app/voxtag2/usecases/tags/display/tags_widget.dart';
 import 'package:voxtag2app/voxtag2/usecases/tags/search/search_tags_actions.dart';
 
-import 'TagUpdateModeInterface.dart';
+import '../TagUpdateModeInterface.dart';
 
 class TaggedWidget extends StatelessWidget {
   final String tag;

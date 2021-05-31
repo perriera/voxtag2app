@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:voxtag2app/voxtag2/instance/Themes.dart';
 
-import '../../../../extensions/CapExtensions.dart';
+import '../../../extensions/CapExtensions.dart';
 
 class ChangeTagDialog2 extends StatefulWidget {
   final Function update;

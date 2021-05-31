@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:voxtag2app/voxtag2/toast/toast_dialog.dart';
 
-import '../../../UseCaseInterface.dart';
+import '../../UseCaseInterface.dart';
 import '../TagUpdateModeInterface.dart';
 import 'delete_tag_action.dart';
 

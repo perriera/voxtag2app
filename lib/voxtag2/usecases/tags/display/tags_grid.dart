@@ -6,7 +6,7 @@ import 'package:voxtag2app/voxtag2/usecases/photos/database/GridSizeInterface.da
 import 'package:voxtag2app/voxtag2/usecases/photos/database/GridSizeUpdate.dart';
 import 'package:voxtag2app/voxtag2/usecases/voxtags/VoxTags.dart';
 
-import 'tagged_widget.dart';
+import '../../tag/display/tagged_widget.dart';
 
 class TagsGrid extends StatelessWidget {
   @override

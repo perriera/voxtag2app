@@ -2,8 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:voxtag2app/voxtag2/extensions/NavBarButton.dart';
+import 'package:voxtag2app/voxtag2/usecases/columns/change/change_columns_button.dart';
 import 'package:voxtag2app/voxtag2/usecases/photo/take/take_photo.dart';
-import 'package:voxtag2app/voxtag2/usecases/tags/obsolete/change/change_columns_button.dart';
 
 import 'about_button.dart';
 import 'change_theme_button.dart';

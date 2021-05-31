@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:voxtag2app/voxtag2/options/Options.dart';
 
-import 'tag_widget.dart';
+import '../display/tag_widget.dart';
 
 class TagSelectWidget extends TagWidgetBase {
   const TagSelectWidget({
