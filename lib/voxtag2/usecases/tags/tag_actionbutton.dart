@@ -2,8 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:voxtag2app/voxtag2/extensions/NavBarButton.dart';
 import 'package:voxtag2app/voxtag2/toast/toast_dialog.dart';
 
+import '../../tag/TagUpdateModeInterface.dart';
 import '../search/search_tags_actions.dart';
-import 'TagUpdateModeInterface.dart';
 
 class TagActionButton extends StatelessWidget {
   const TagActionButton({
