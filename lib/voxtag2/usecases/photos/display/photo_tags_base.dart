@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:voxtag2app/voxtag2/usecases/photos/display/shadow_tag.dart';
+import 'package:voxtag2app/voxtag2/usecases/tag/display/shadow_tag.dart';
 import 'package:voxtag2app/voxtag2/usecases/voxtags/VoxTag.dart';
 
 class BasePhotoTags extends StatelessWidget {

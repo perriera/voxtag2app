@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:voxtag2app/voxtag2/usecases/voxtags/VoxTag.dart';
 
-import '../../../../voxtag2/extensions/CapExtensions.dart';
+import '../../../extensions/CapExtensions.dart';
 
 class TagText extends StatelessWidget {
   final VoxTag photoId;

@@ -4,7 +4,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:voxtag2app/voxtag2/instance/Themes.dart';
 import 'package:voxtag2app/voxtag2/usecases/app/display/app_bar.dart';
 import 'package:voxtag2app/voxtag2/usecases/photos/database/PhotoAlbum.dart';
-import 'package:voxtag2app/voxtag2/usecases/photos/display/shadow_tag.dart';
+import 'package:voxtag2app/voxtag2/usecases/tag/display/shadow_tag.dart';
 import 'package:voxtag2app/voxtag2/usecases/tag/remove/remove_tag_navbar.dart';
 import 'package:voxtag2app/voxtag2/usecases/voxtags/VoxTag.dart';
 import 'package:voxtag2app/voxtag2/usecases/voxtags/VoxTags.dart';

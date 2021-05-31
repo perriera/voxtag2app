@@ -88,7 +88,7 @@ class _ChangeTagDialog2State extends State<ChangeTagDialog2> {
   TextButton doConfirmButton(BuildContext context) {
     return TextButton(
       child: Text(
-        'Change Tag',
+        'Change',
         style: ThemeCatalog.kDialogTitleStyle,
       ),
       onPressed: () {
@@ -108,7 +108,7 @@ class _ChangeTagDialog2State extends State<ChangeTagDialog2> {
   TextButton doAbortButton(BuildContext context) {
     return TextButton(
       child: Text(
-        'Abort Change',
+        'Undo',
         style: ThemeCatalog.kDialogTitleStyle,
       ),
       onPressed: () {

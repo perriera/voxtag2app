@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:voxtag2app/voxtag2/instance/Themes.dart';
+import 'dart:ui' as ui;
 
 // import '../../../../app/extensions/string.dart';
 import '../../../extensions/CapExtensions.dart';
@@ -78,34 +79,9 @@ class _TagPhotosDialogState extends State<TagPhotosDialog> {
     );
   }
 
-  TextButton doAppendButton(BuildContext context) {
-    return TextButton(
-      child: Text(
-        'Append Tags',
-        style: TextStyle(color: Colors.white),
-      ),
-      // color: Colors.lightBlueAccent,
-      onPressed: () {
-        if (validateInput(newTags)) {
-          Navigator.pop(context);
-          widget.update(newTags, true);
-        } else {
-          setState(() {
-            newTags = "";
-            myController.text = "";
-            diagnostic = "Letters and numbers only";
-          });
-        }
-      },
-    );
-  }
-
   TextButton doReplaceButton(BuildContext context) {
     return TextButton(
-      child: Text(
-        'Replace Tags',
-        style: TextStyle(color: Colors.white),
-      ),
+      child: ActionButton(text: 'Replace Tags'),
 //      color: Colors.lightBlueAccent,
       onPressed: () {
         if (validateInput(newTags)) {
@@ -121,7 +97,59 @@ class _TagPhotosDialogState extends State<TagPhotosDialog> {
       },
     );
   }
+
+  TextButton doAppendButton(BuildContext context) {
+    return TextButton(
+      child: ActionButton(text: 'Append Tags'),
+      // color: Colors.lightBlueAccent,
+      onPressed: () {
+        if (validateInput(newTags)) {
+          Navigator.pop(context);
+          widget.update(newTags, true);
+        } else {
+          setState(() {
+            newTags = "";
+            myController.text = "";
+            diagnostic = "Letters and numbers only";
+          });
+        }
+      },
+    );
+  }
 }
+
+class ActionButton extends StatelessWidget {
+  final String text;
+  const ActionButton({
+    Key key,
+    @required this.text,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    TextStyle style = TextStyle(color: Colors.white);
+    return new ClipRect(
+      child: new Stack(
+        children: [
+          new Positioned(
+            top: 2.0,
+            left: 2.0,
+            child: new Text(
+              this.text,
+              style: style.copyWith(color: Colors.black.withOpacity(0.5)),
+            ),
+          ),
+          new BackdropFilter(
+            filter: new ui.ImageFilter.blur(sigmaX: 2.0, sigmaY: 2.0),
+            child: new Text(this.text, style: style),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+// style: TextStyle(color: Colors.white)
 
 class EndOfTextController extends TextEditingController {
   @override

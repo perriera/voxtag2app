@@ -1,5 +1,5 @@
 import 'package:flutter/cupertino.dart';
-import 'package:voxtag2app/voxtag2/usecases/photos/display/tag_text.dart';
+import 'package:voxtag2app/voxtag2/usecases/tag/display/tag_text.dart';
 import 'package:voxtag2app/voxtag2/usecases/voxtags/VoxTag.dart';
 
 class ShadowedTag extends StatelessWidget {
