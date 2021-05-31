@@ -6,7 +6,7 @@ import 'package:voxtag2app/voxtag2/buttons/whole_realm.dart';
 import 'package:voxtag2app/voxtag2/instance/Constants.dart';
 import 'package:voxtag2app/voxtag2/instance/Themes.dart';
 
-import 'app_logo.dart';
+import '../usecases/app/logo/app_logo.dart';
 
 class AboutDialogBox extends StatefulWidget {
   @override
