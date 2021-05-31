@@ -2,10 +2,10 @@
 
 import 'package:voxtag2app/voxtag2/usecases/photos/database/PhotoAlbum.dart';
 
+import '../../extensions/CapExtensions.dart';
 import 'access/obsolete/TagStorage.dart';
 import 'interfaces/VoxTagInterface.dart';
 import 'interfaces/VoxTagsInterface.dart';
-import '../../extensions/CapExtensions.dart';
 
 class VoxTags implements VoxTagsInterface {
   Map<int, String> _photoTags = Map<int, String>();
@@ -97,7 +97,7 @@ class VoxTags implements VoxTagsInterface {
       List<String> result = _tags.trim().split(" ");
       return result;
     } else
-      return List<String>();
+      return [];
   }
 
   @override
@@ -119,7 +119,7 @@ class VoxTags implements VoxTagsInterface {
 
   @override
   List<String> allTags() {
-    List<String> allTags = List<String>();
+    List<String> allTags = [];
     for (var entry in _photoTags.entries) {
       String tags = entry.value;
       tags = tags.allWordsInCaps;

@@ -18,10 +18,9 @@ class TaggedWidget extends StatelessWidget {
         initialData: SearchTagsAction(),
         stream: tagActionMode.stream,
         builder: (context, snapshot) {
-          return FlatButton(
+          return TextButton(
             autofocus: true,
             onPressed: () => snapshot.data.onTap(context, tag),
-            padding: EdgeInsets.all(5),
             child: Container(
               padding: EdgeInsets.all(5),
               decoration: BoxDecoration(

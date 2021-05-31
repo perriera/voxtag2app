@@ -10,15 +10,6 @@ import 'package:voxtag2app/voxtag2/usecases/photos/display/photos_spinner.dart';
 import 'package:voxtag2app/voxtag2/usecases/photos/display/photos_thumbnail.dart';
 import 'package:voxtag2app/voxtag2/usecases/voxtags/interfaces/VoxTagInterface.dart';
 
-// class PhotosGrid extends StatelessWidget {
-//   @override
-//   Widget build(BuildContext context) {
-//     return Container(
-//       child: Text('photos accessed'),
-//     );
-//   }
-// }
-
 class PhotosGrid extends StatelessWidget {
   PhotosGrid({
     Key key,

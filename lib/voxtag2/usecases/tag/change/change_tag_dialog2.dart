@@ -85,13 +85,12 @@ class _ChangeTagDialog2State extends State<ChangeTagDialog2> {
     );
   }
 
-  FlatButton doConfirmButton(BuildContext context) {
-    return FlatButton(
+  TextButton doConfirmButton(BuildContext context) {
+    return TextButton(
       child: Text(
         'Change Tag',
-        style: TextStyle(color: Colors.white),
+        style: ThemeCatalog.kDialogTitleStyle,
       ),
-      color: Colors.lightBlueAccent,
       onPressed: () {
         newTags = myController.text;
         if (validateInput(newTags)) {
@@ -106,13 +105,12 @@ class _ChangeTagDialog2State extends State<ChangeTagDialog2> {
     );
   }
 
-  FlatButton doAbortButton(BuildContext context) {
-    return FlatButton(
+  TextButton doAbortButton(BuildContext context) {
+    return TextButton(
       child: Text(
         'Abort Change',
-        style: TextStyle(color: Colors.white),
+        style: ThemeCatalog.kDialogTitleStyle,
       ),
-      color: Colors.lightBlueAccent,
       onPressed: () {
         Navigator.pop(context);
       },

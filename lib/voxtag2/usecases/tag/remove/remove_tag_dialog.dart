@@ -22,7 +22,6 @@ class _RemoveTagDialogState extends State<RemoveTagDialog> {
 
   @override
   Widget build(BuildContext context) {
-    List<Widget> widgets = convert(widget.voxTag);
     return Scaffold(
       appBar: AppTopBar(),
       body: Column(

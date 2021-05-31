@@ -80,7 +80,7 @@ class _HelpDialogBoxState extends State<HelpDialogBox> {
         ),
         Align(
           alignment: Alignment.bottomRight,
-          child: FlatButton(
+          child: TextButton(
               onPressed: () {
                 Navigator.of(context).pop();
               },

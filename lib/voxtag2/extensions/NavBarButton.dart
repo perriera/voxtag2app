@@ -14,7 +14,7 @@ class NavBarButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return FlatButton(
+    return TextButton(
       autofocus: true,
       onPressed: this.onTap,
       child: Column(

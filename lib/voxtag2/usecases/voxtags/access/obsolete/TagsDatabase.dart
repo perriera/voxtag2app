@@ -62,8 +62,6 @@ class TagsDatabase implements VoxTagsInterface {
       var oldTag = _instance.photoTags[key].trim() + " ";
       oldTag = oldTag.replaceAll(tag + " ", "").trim();
       _instance.photoTags[key] = oldTag;
-      var inspect0 = _instance.photoTags;
-      var inspect1 = _instance;
       if (_instance.totalNumberOfTags == 0) {
         _instance.photoTags.remove(key);
       }
@@ -86,7 +84,7 @@ class TagsDatabase implements VoxTagsInterface {
 
   @override
   List<String> allTags() {
-    List<String> allTags = List<String>();
+    List<String> allTags = [];
     for (var entry in _instance.photoTags.entries) {
       String tags = entry.value;
       tags = tags.allWordsInCaps;
@@ -278,7 +276,7 @@ class TagsDatabase implements VoxTagsInterface {
       List<String> result = tags.trim().split(" ");
       return result;
     } else
-      return List<String>();
+      return [];
   }
 
   @override

@@ -1,7 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:voxtag2app/voxtag2/instance/Themes.dart';
-// import 'package:voxtag2app/voxtag3/app/themes.dart';
 
 // import '../../../../app/extensions/string.dart';
 import '../../../extensions/CapExtensions.dart';
@@ -79,13 +78,13 @@ class _TagPhotosDialogState extends State<TagPhotosDialog> {
     );
   }
 
-  FlatButton doAppendButton(BuildContext context) {
-    return FlatButton(
+  TextButton doAppendButton(BuildContext context) {
+    return TextButton(
       child: Text(
         'Append Tags',
         style: TextStyle(color: Colors.white),
       ),
-      color: Colors.lightBlueAccent,
+      // color: Colors.lightBlueAccent,
       onPressed: () {
         if (validateInput(newTags)) {
           Navigator.pop(context);
@@ -101,13 +100,13 @@ class _TagPhotosDialogState extends State<TagPhotosDialog> {
     );
   }
 
-  FlatButton doReplaceButton(BuildContext context) {
-    return FlatButton(
+  TextButton doReplaceButton(BuildContext context) {
+    return TextButton(
       child: Text(
         'Replace Tags',
         style: TextStyle(color: Colors.white),
       ),
-      color: Colors.lightBlueAccent,
+//      color: Colors.lightBlueAccent,
       onPressed: () {
         if (validateInput(newTags)) {
           Navigator.pop(context);

@@ -90,6 +90,6 @@ class ReservedWords {
       }
       return list;
     } else
-      return List<String>();
+      return [];
   }
 }

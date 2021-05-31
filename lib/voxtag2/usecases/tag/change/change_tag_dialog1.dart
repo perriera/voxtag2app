@@ -74,13 +74,12 @@ class _ChangeTagDialog1State extends State<ChangeTagDialog1> {
     );
   }
 
-  FlatButton doYesButton(BuildContext context) {
-    return FlatButton(
+  TextButton doYesButton(BuildContext context) {
+    return TextButton(
       child: Text(
         'Yes',
-        style: TextStyle(color: Colors.white, fontSize: 20),
+        style: ThemeCatalog.kDialogTitleStyle,
       ),
-      color: Colors.lightBlueAccent,
       onPressed: () {
         Navigator.pop(context);
         widget.update(widget.tagToDelete, true);
@@ -88,13 +87,12 @@ class _ChangeTagDialog1State extends State<ChangeTagDialog1> {
     );
   }
 
-  FlatButton doNoButton(BuildContext context) {
-    return FlatButton(
+  TextButton doNoButton(BuildContext context) {
+    return TextButton(
       child: Text(
         'No',
-        style: TextStyle(color: Colors.white, fontSize: 20),
+        style: ThemeCatalog.kDialogTitleStyle,
       ),
-      color: Colors.lightBlueAccent,
       onPressed: () {
         Navigator.pop(context);
         widget.update(widget.tagToDelete, false);
