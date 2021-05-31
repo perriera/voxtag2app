@@ -1,14 +1,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:voxtag2app/voxtag2/usecases/tag/display/tag_text.dart';
-import 'package:voxtag2app/voxtag2/usecases/voxtags/VoxTag.dart';
 
 class ShadowedTag extends StatelessWidget {
-  final VoxTag photoId;
   final TextStyle textStyle;
   final String tag;
   const ShadowedTag({
     Key key,
-    this.photoId,
     this.textStyle,
     this.tag,
   }) : super(key: key);
@@ -26,9 +23,7 @@ class ShadowedTag extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
-          children: <Widget>[
-            TagText(photoId: photoId, textStyle: textStyle, tag: tag)
-          ],
+          children: <Widget>[TagText(textStyle: textStyle, tag: tag)],
         ));
   }
 }

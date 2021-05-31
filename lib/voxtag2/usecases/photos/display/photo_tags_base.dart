@@ -35,7 +35,6 @@ class BasePhotoTags extends StatelessWidget {
     for (var tag in tags) {
       tag = trimmed(tag);
       var widget = ShadowedTag(
-        photoId: photoId,
         textStyle: textStyle,
         tag: tag,
       );

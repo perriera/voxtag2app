@@ -64,7 +64,6 @@ class _RemoveTagDialogState extends State<RemoveTagDialog> {
                 Icon(FontAwesomeIcons.minusCircle),
                 SizedBox(width: 10),
                 ShadowedTag(
-                  photoId: voxTag,
                   tag: text,
                   textStyle: ThemeCatalog.kOptionsItemStyle.copyWith(
                     fontSize: 30.0,
