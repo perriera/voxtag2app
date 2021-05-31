@@ -5,9 +5,9 @@ import 'package:voxtag2app/voxtag2/extensions/NavBarButton.dart';
 import 'package:voxtag2app/voxtag2/usecases/columns/change/change_columns_button.dart';
 import 'package:voxtag2app/voxtag2/usecases/photo/take/take_photo.dart';
 
-import '../usecases/app/about/about_button.dart';
-import '../usecases/help/show/help_button.dart';
-import '../usecases/themes/change/change_theme_button.dart';
+import '../app/about/about_button.dart';
+import '../help/show/help_button.dart';
+import '../themes/change/change_theme_button.dart';
 
 class MoreOptionsButton extends StatelessWidget {
   const MoreOptionsButton({

@@ -2,11 +2,11 @@ import 'dart:ui';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:voxtag2app/voxtag2/buttons/whole_realm.dart';
 import 'package:voxtag2app/voxtag2/instance/Constants.dart';
 import 'package:voxtag2app/voxtag2/instance/Themes.dart';
+import 'package:voxtag2app/voxtag2/usecases/app/logo/whole_realm.dart';
 
-import '../usecases/app/logo/app_logo.dart';
+import '../logo/app_logo.dart';
 
 class AboutDialogBox extends StatefulWidget {
   @override
