@@ -2,8 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:voxtag2app/voxtag2/extensions/UBDError.dart';
 import 'package:voxtag2app/voxtag2/instance/Themes.dart';
 import 'package:voxtag2app/voxtag2/instance/VoxTag2.dart';
-import 'package:voxtag2app/voxtag2/usecases/photos/database/GridSizeInterface.dart';
-import 'package:voxtag2app/voxtag2/usecases/photos/database/GridSizeUpdate.dart';
+import 'package:voxtag2app/voxtag2/usecases/columns/GridSizeInterface.dart';
+import 'package:voxtag2app/voxtag2/usecases/columns/GridSizeUpdate.dart';
 import 'package:voxtag2app/voxtag2/usecases/voxtags/VoxTags.dart';
 
 import '../../tag/display/tagged_widget.dart';

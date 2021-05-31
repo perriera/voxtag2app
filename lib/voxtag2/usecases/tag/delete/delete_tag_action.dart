@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:voxtag2app/voxtag2/usecases/photos/database/GridSizeUpdate.dart';
+import 'package:voxtag2app/voxtag2/usecases/columns/GridSizeUpdate.dart';
 import 'package:voxtag2app/voxtag2/usecases/voxtags/VoxTags.dart';
 
 import '../TagUpdateModeInterface.dart';

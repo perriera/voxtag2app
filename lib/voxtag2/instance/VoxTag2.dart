@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:instabug_flutter/Instabug.dart';
 import 'package:voxtag2app/voxtag2/instance/Themes.dart';
 import 'package:voxtag2app/voxtag2/system/load_path.dart';
-import 'package:voxtag2app/voxtag2/usecases/app/display_maindisplay/main_display.dart';
+import 'package:voxtag2app/voxtag2/usecases/app/display/main_display.dart';
 import 'package:voxtag2app/voxtag2/usecases/photo/share/share_photo.dart';
 import 'package:voxtag2app/voxtag2/usecases/photo/view/photo_display.dart';
 import 'package:voxtag2app/voxtag2/usecases/photos/database/PhotoAlbum.dart';
