@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:voxtag2app/voxtag2/instance/Themes.dart';
+import 'package:voxtag2app/voxtag2/usecases/tag/display/shadow_tag.dart';
 
 import '../../../extensions/CapExtensions.dart';
 
@@ -87,10 +88,7 @@ class _ChangeTagDialog2State extends State<ChangeTagDialog2> {
 
   TextButton doConfirmButton(BuildContext context) {
     return TextButton(
-      child: Text(
-        'Change',
-        style: ThemeCatalog.kDialogTitleStyle,
-      ),
+      child: ShadowedButton(tag: 'Change'),
       onPressed: () {
         newTags = myController.text;
         if (validateInput(newTags)) {
@@ -107,10 +105,7 @@ class _ChangeTagDialog2State extends State<ChangeTagDialog2> {
 
   TextButton doAbortButton(BuildContext context) {
     return TextButton(
-      child: Text(
-        'Undo',
-        style: ThemeCatalog.kDialogTitleStyle,
-      ),
+      child: ShadowedButton(tag: 'Undo'),
       onPressed: () {
         Navigator.pop(context);
       },

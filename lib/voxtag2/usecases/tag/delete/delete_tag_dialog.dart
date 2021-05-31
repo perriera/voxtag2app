@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:voxtag2app/voxtag2/extensions/CenterIt.dart';
 import 'package:voxtag2app/voxtag2/instance/Themes.dart';
+import 'package:voxtag2app/voxtag2/usecases/tag/display/shadow_tag.dart';
 
 import '../../../extensions/CapExtensions.dart';
 
@@ -76,10 +77,7 @@ class _DeleteTagDialogState extends State<DeleteTagDialog> {
 
   TextButton doYesButton(BuildContext context) {
     return TextButton(
-      child: Text(
-        'Yes',
-        style: ThemeCatalog.kDialogTitleStyle,
-      ),
+      child: ShadowedButton(tag: 'Yes'),
       onPressed: () {
         Navigator.pop(context);
         widget.update(widget.tagToDelete, true);
@@ -89,10 +87,7 @@ class _DeleteTagDialogState extends State<DeleteTagDialog> {
 
   TextButton doNoButton(BuildContext context) {
     return TextButton(
-      child: Text(
-        'No',
-        style: ThemeCatalog.kDialogTitleStyle,
-      ),
+      child: ShadowedButton(tag: 'No'),
       onPressed: () {
         Navigator.pop(context);
         widget.update(widget.tagToDelete, false);

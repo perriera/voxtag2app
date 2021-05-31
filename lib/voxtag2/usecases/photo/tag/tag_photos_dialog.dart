@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:voxtag2app/voxtag2/instance/Themes.dart';
+import 'package:voxtag2app/voxtag2/usecases/tag/display/shadow_tag.dart';
 import 'dart:ui' as ui;
 
 // import '../../../../app/extensions/string.dart';
@@ -81,8 +82,7 @@ class _TagPhotosDialogState extends State<TagPhotosDialog> {
 
   TextButton doReplaceButton(BuildContext context) {
     return TextButton(
-      child: ActionButton(text: 'Replace Tags'),
-//      color: Colors.lightBlueAccent,
+      child: ShadowedButton(tag: 'Replace'),
       onPressed: () {
         if (validateInput(newTags)) {
           Navigator.pop(context);
@@ -100,8 +100,7 @@ class _TagPhotosDialogState extends State<TagPhotosDialog> {
 
   TextButton doAppendButton(BuildContext context) {
     return TextButton(
-      child: ActionButton(text: 'Append Tags'),
-      // color: Colors.lightBlueAccent,
+      child: ShadowedButton(tag: 'Append'),
       onPressed: () {
         if (validateInput(newTags)) {
           Navigator.pop(context);
