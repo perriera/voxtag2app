@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:voxtag2app/voxtag2/instance/Themes.dart';
-import 'package:voxtag2app/voxtag2/usecases/app/display/app_bar.dart';
+import 'package:voxtag2app/voxtag2/usecases/app/display/main_display_appbar.dart';
 import 'package:voxtag2app/voxtag2/usecases/photo/photo_menu.dart';
 import 'package:voxtag2app/voxtag2/usecases/voxtags/VoxTag.dart';
 
@@ -12,7 +12,7 @@ class PhotoDisplay extends StatelessWidget {
 
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppTopBar(),
+      appBar: MainDisplayTopBar(),
       body: GestureDetector(
         onTap: () => Navigator.pop(context),
         child: PhotoView(voxTag: voxTag),

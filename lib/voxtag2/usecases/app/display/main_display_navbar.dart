@@ -6,7 +6,7 @@ import 'package:voxtag2app/voxtag2/usecases/photos/more_button.dart';
 import 'package:voxtag2app/voxtag2/usecases/photos/refresh/refresh_photos_button.dart';
 import 'package:voxtag2app/voxtag2/usecases/tags/search/search_tags_button.dart';
 
-class PhotosNavBar extends StatelessWidget {
+class MainDisplayNavBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(

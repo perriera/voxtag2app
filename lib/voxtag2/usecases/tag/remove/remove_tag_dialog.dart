@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:voxtag2app/voxtag2/instance/Themes.dart';
-import 'package:voxtag2app/voxtag2/usecases/app/display/app_bar.dart';
+import 'package:voxtag2app/voxtag2/usecases/app/display/main_display_appbar.dart';
 import 'package:voxtag2app/voxtag2/usecases/photos/database/PhotoAlbum.dart';
 import 'package:voxtag2app/voxtag2/usecases/tag/display/shadow_tag.dart';
 import 'package:voxtag2app/voxtag2/usecases/tag/remove/remove_tag_navbar.dart';
@@ -23,7 +23,7 @@ class _RemoveTagDialogState extends State<RemoveTagDialog> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppTopBar(),
+      appBar: MainDisplayTopBar(),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.start,

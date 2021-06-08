@@ -4,8 +4,8 @@ import 'package:flutter/services.dart';
 import 'package:voxtag2app/voxtag2/instance/Constants.dart';
 import 'package:voxtag2app/voxtag2/instance/Themes.dart';
 
-class AppTopBar extends StatelessWidget with PreferredSizeWidget {
-  AppTopBar({
+class MainDisplayTopBar extends StatelessWidget with PreferredSizeWidget {
+  MainDisplayTopBar({
     Key key,
   }) : super(key: key);
 
