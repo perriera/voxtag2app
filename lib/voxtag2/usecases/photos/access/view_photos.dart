@@ -43,6 +43,7 @@ class _PhotosViewState extends State<PhotosView> with WidgetsBindingObserver {
   Widget build(BuildContext context) {
     return Container(
       child: StreamBuilder<PermissionStatus>(
+          initialData: PermissionStatus.undetermined,
           stream: checkPermissions.stream,
           builder: (context, snapshot) {
             try {
@@ -67,11 +68,11 @@ class _PhotosViewState extends State<PhotosView> with WidgetsBindingObserver {
         case PermissionStatus.restricted:
           throw 'Photos access restricted';
         case PermissionStatus.undetermined:
-          throw 'Photos access undetermined';
+          throw 'Press Refresh';
         case PermissionStatus.permanentlyDenied:
           throw 'Photos access denied';
         default:
-          throw 'Photos access unavailable';
+          throw 'Photos access unknown';
       }
     }
   }

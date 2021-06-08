@@ -62,6 +62,11 @@ class _HelpDialogBoxState extends State<HelpDialogBox> {
           width: 200,
           child: AppLogoWidget(),
         ),
+        Text(
+          "User Help",
+          style: ThemeCatalog.kDialogTitleStyle,
+          textAlign: TextAlign.center,
+        ),
         SizedBox(
           height: 15,
         ),
@@ -72,6 +77,71 @@ class _HelpDialogBoxState extends State<HelpDialogBox> {
         ),
         Text(
           "Double click on a item to open",
+          style: ThemeCatalog.kAppBarTextStyle,
+          textAlign: TextAlign.center,
+        ),
+        SizedBox(
+          height: 22,
+        ),
+        Text(
+          "Press the Mode button to switch",
+          style: ThemeCatalog.kAppBarTextStyle,
+          textAlign: TextAlign.center,
+        ),
+        Text(
+          "between Tag, Search & Share",
+          style: ThemeCatalog.kAppBarTextStyle,
+          textAlign: TextAlign.center,
+        ),
+        SizedBox(
+          height: 22,
+        ),
+        Text(
+          "'Allow Access to All Photos'",
+          style: ThemeCatalog.kAppBarTextStyle,
+          textAlign: TextAlign.center,
+        ),
+        Text(
+          "is required for VoxTag 2 to work",
+          style: ThemeCatalog.kAppBarTextStyle,
+          textAlign: TextAlign.center,
+        ),
+        SizedBox(
+          height: 22,
+        ),
+        Text(
+          "Press Refresh whenever the listing",
+          style: ThemeCatalog.kAppBarTextStyle,
+          textAlign: TextAlign.center,
+        ),
+        Text(
+          "of photos appears out of sync",
+          style: ThemeCatalog.kAppBarTextStyle,
+          textAlign: TextAlign.center,
+        ),
+        SizedBox(
+          height: 22,
+        ),
+        Text(
+          "Tags must be at least three",
+          style: ThemeCatalog.kAppBarTextStyle,
+          textAlign: TextAlign.center,
+        ),
+        Text(
+          "characters long",
+          style: ThemeCatalog.kAppBarTextStyle,
+          textAlign: TextAlign.center,
+        ),
+        SizedBox(
+          height: 22,
+        ),
+        Text(
+          "Sharing multiple photos is",
+          style: ThemeCatalog.kAppBarTextStyle,
+          textAlign: TextAlign.center,
+        ),
+        Text(
+          "limited my the devices memory",
           style: ThemeCatalog.kAppBarTextStyle,
           textAlign: TextAlign.center,
         ),

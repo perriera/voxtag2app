@@ -35,10 +35,7 @@ class PhotosAlbum implements PhotoAppAccessInterface {
     PhotoAlbumManager.checkPermissions().then((status) {
       checkPermissions.add(status);
       refresh(context);
-      // Toast.show("Photos app access granted", context);
-      // Fluttertoast.showToast(msg: "Photos app access granted");
     }).catchError((error) {
-      // Toast.show("Photos app access denied", context);
       Fluttertoast.showToast(msg: "Photos app access denied");
     });
   }

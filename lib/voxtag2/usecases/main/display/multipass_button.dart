@@ -3,9 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:voxtag2app/voxtag2/extensions/NavBarButton.dart';
 import 'package:voxtag2app/voxtag2/usecases/photos/share/share_photo_button.dart';
-import 'package:voxtag2app/voxtag2/usecases/photos/share/share_photos_usecase.dart';
 import 'package:voxtag2app/voxtag2/usecases/photos/tag/tag_photos_button.dart';
-import 'package:voxtag2app/voxtag2/usecases/photos/tag/tag_photos_usecase.dart';
 import 'package:voxtag2app/voxtag2/usecases/tags/search/search_tags_button.dart';
 
 import 'multipass_stream.dart';
@@ -33,23 +31,7 @@ class MultipassButton extends StatelessWidget {
         });
   }
 
-  // String _doIcon(BuildContext context) {
-  //   var texts = ['Tag', 'Share', 'Search'];
-  //   return texts[mode];
-  // }
-
-  // String _doTitle(BuildContext context) {
-  //   var texts = ['Tag', 'Share', 'Search'];
-  //   return texts[mode];
-  // }
-
   Widget _doButton(BuildContext context) {
-    // var buttons = [
-    //   TagPhotosButton(),
-    //   SharePhotosButton(),
-    //   SearchTagsButton()
-    // ];
-    // return buttons[mode];
     if (mode == 0)
       return TagPhotosButton();
     else if (mode == 1)
@@ -69,7 +51,7 @@ class MultipassModeButton extends StatelessWidget {
     return NavBarButton(
       icon: FontAwesomeIcons.modx,
       title: "Mode",
-      onTap: () => MultipassButton.bump(), // RefreshPhotoUseCase(context),
+      onTap: () => MultipassButton.bump(),
     );
   }
 }
