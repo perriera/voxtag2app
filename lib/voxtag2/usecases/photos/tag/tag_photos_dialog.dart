@@ -43,7 +43,7 @@ class _TagPhotosDialogState extends State<TagPhotosDialog> {
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             Text(
-              'Record Tag',
+              'Tag Photos',
               textAlign: TextAlign.center,
               style: ThemeCatalog.kDialogTitleStyle,
             ),

@@ -1,11 +1,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:voxtag2app/voxtag2/instance/Themes.dart';
-import 'package:voxtag2app/voxtag2/usecases/photos/tag/tag_photos_button.dart';
 import 'package:voxtag2app/voxtag2/usecases/photos/more_button.dart';
 import 'package:voxtag2app/voxtag2/usecases/photos/refresh/refresh_photos_button.dart';
-import 'package:voxtag2app/voxtag2/usecases/photos/share/share_photo_button.dart';
 import 'package:voxtag2app/voxtag2/usecases/tags/search/search_tags_button.dart';
+
+import 'multipass_button.dart';
 
 class MainDisplayNavBar extends StatelessWidget {
   @override
@@ -18,7 +18,7 @@ class MainDisplayNavBar extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: <Widget>[
           RefreshPhotosButton(),
-          SharePhotosButton(), // TagPhotosButton(),
+          MultipassButton(),
           SearchTagsButton(),
           MoreOptionsButton(),
         ],

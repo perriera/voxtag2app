@@ -1,5 +1,4 @@
 import 'package:flutter/cupertino.dart';
-import 'package:voxtag2app/voxtag2/usecases/voxtags/VoxTag.dart';
 
 import '../../../extensions/CapExtensions.dart';
 
