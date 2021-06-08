@@ -19,7 +19,7 @@ class MainDisplayNavBar extends StatelessWidget {
         children: <Widget>[
           RefreshPhotosButton(),
           MultipassButton(),
-          SearchTagsButton(),
+          MultipassModeButton(),
           MoreOptionsButton(),
         ],
       ),

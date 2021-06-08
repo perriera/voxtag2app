@@ -102,7 +102,7 @@ class ThemeCatalog {
       ),
       kDialogTitleStyle: TextStyle(
         color: Colors.lightBlueAccent,
-        fontSize: 30,
+        fontSize: 25,
         fontFamily: 'Raleway',
         fontWeight: FontWeight.bold,
       ),
@@ -145,7 +145,7 @@ class ThemeCatalog {
       ),
       kDialogTitleStyle: TextStyle(
         color: Colors.lightBlueAccent,
-        fontSize: 30,
+        fontSize: 25,
         fontFamily: 'Raleway',
         fontWeight: FontWeight.bold,
       ),
@@ -188,7 +188,7 @@ class ThemeCatalog {
       ),
       kDialogTitleStyle: TextStyle(
         color: Colors.lightBlueAccent,
-        fontSize: 30,
+        fontSize: 25,
         fontFamily: 'Raleway',
         fontWeight: FontWeight.bold,
       ),
@@ -233,7 +233,7 @@ class ThemeCatalog {
       ),
       kDialogTitleStyle: TextStyle(
         color: Colors.lightBlueAccent,
-        fontSize: 30,
+        fontSize: 25,
         fontFamily: 'Raleway',
         fontWeight: FontWeight.bold,
       ),
@@ -276,7 +276,7 @@ class ThemeCatalog {
       ),
       kDialogTitleStyle: TextStyle(
         color: Colors.lightBlueAccent,
-        fontSize: 30,
+        fontSize: 25,
         fontFamily: 'Raleway',
         fontWeight: FontWeight.bold,
       ),
@@ -323,7 +323,7 @@ class ThemeCatalog {
       ),
       kDialogTitleStyle: TextStyle(
         color: Colors.lightBlueAccent,
-        fontSize: 30,
+        fontSize: 25,
         fontFamily: 'Raleway',
         fontWeight: FontWeight.bold,
       ),
@@ -372,7 +372,7 @@ class ThemeCatalog {
       ),
       kDialogTitleStyle: TextStyle(
         color: Colors.lightBlueAccent,
-        fontSize: 30,
+        fontSize: 25,
         fontFamily: 'Raleway',
         fontWeight: FontWeight.bold,
       ),
@@ -421,7 +421,7 @@ class ThemeCatalog {
       ),
       kDialogTitleStyle: TextStyle(
         color: Colors.lightBlueAccent,
-        fontSize: 30,
+        fontSize: 25,
         fontFamily: 'Raleway',
         fontWeight: FontWeight.bold,
       ),

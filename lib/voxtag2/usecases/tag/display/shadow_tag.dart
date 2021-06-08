@@ -37,6 +37,7 @@ class ShadowedButton extends ShadowedTag {
           tag: tag,
           textStyle: ThemeCatalog.kDialogTitleStyle.copyWith(
             color: Colors.white,
+            fontSize: 25.toDouble(),
           ),
         );
 }
