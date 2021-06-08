@@ -5,6 +5,7 @@ import 'package:photo_album_manager/photo_album_manager.dart';
 import 'package:share/share.dart';
 import 'package:voxtag2app/voxtag2/toast/toast_dialog.dart';
 import 'package:voxtag2app/voxtag2/usecases/UseCaseInterface.dart';
+import 'package:voxtag2app/voxtag2/usecases/photos/database/PhotoAlbum.dart';
 import 'package:voxtag2app/voxtag2/usecases/voxtags/VoxTag.dart';
 import 'package:voxtag2app/voxtag2/usecases/voxtags/VoxTags.dart';
 
@@ -23,10 +24,8 @@ class SharePhotosUseCase implements UseCaseInterface {
         builder: (context) => SharePhotosDialog(
           update: (newTag, append) async {
             _onShare(context);
-            // VoxTags().instance.tagSelected(newTag, append);
-            // VoxTags().instance.save();
-            //VoxTags().instance.clearSelected();
-            //PhotosAlbum().access(context);
+            VoxTags().instance.clearSelected();
+            PhotosAlbum().refresh(context);
           },
         ),
       );
