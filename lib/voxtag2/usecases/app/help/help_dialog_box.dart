@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:voxtag2app/voxtag2/instance/Constants.dart';
 import 'package:voxtag2app/voxtag2/instance/Themes.dart';
 
-import '../../app/logo/app_logo.dart';
+import '../logo/app_logo.dart';
 
 class HelpDialogBox extends StatefulWidget {
   @override

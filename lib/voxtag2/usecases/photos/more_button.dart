@@ -6,7 +6,7 @@ import 'package:voxtag2app/voxtag2/usecases/columns/change/change_columns_button
 import 'package:voxtag2app/voxtag2/usecases/photo/take/take_photo.dart';
 
 import '../app/about/about_button.dart';
-import '../help/show/help_button.dart';
+import '../app/help/help_button.dart';
 import '../themes/change/change_theme_button.dart';
 
 class MoreOptionsButton extends StatelessWidget {
