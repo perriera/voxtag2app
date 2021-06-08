@@ -4,8 +4,10 @@ import 'package:documents_picker/documents_picker.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_share/flutter_share.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:screenshot/screenshot.dart';
+import 'package:voxtag2app/voxtag2/extensions/NavBarButton.dart';
 import 'package:voxtag2app/voxtag2/instance/Themes.dart';
 import 'package:voxtag2app/voxtag2/toast/toast_dialog.dart';
 import 'package:voxtag2app/voxtag2/usecases/photo/view/photo_display.dart';
@@ -93,6 +95,7 @@ class _PhotoShareState extends State<PhotoShare> with TickerProviderStateMixin {
       },
       child: Scaffold(
         backgroundColor: ThemeCatalog.kMainColor,
+        bottomNavigationBar: buildNavBar(context),
         body: Screenshot(
           controller: _controller,
           child: PhotoWidget(
@@ -111,20 +114,20 @@ class _PhotoShareState extends State<PhotoShare> with TickerProviderStateMixin {
         mainAxisAlignment: MainAxisAlignment.end,
         crossAxisAlignment: CrossAxisAlignment.end,
         children: <Widget>[
-          // NavBarButton(
-          //   icon: Icons.share,
-          //   title: 'Share',
-          //   onTap: () {
-          //     shareScreenShot();
-          //   },
-          // ),
-          // NavBarButton(
-          //   icon: FontAwesomeIcons.windowClose,
-          //   title: 'Back',
-          //   onTap: () {
-          //     Navigator.pop(context);
-          //   },
-          // ),
+          NavBarButton(
+            icon: Icons.share,
+            title: 'Share',
+            onTap: () {
+              shareScreenShot();
+            },
+          ),
+          NavBarButton(
+            icon: FontAwesomeIcons.windowClose,
+            title: 'Back',
+            onTap: () {
+              Navigator.pop(context);
+            },
+          ),
         ],
       ),
     );
