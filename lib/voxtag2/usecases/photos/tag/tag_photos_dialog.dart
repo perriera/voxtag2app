@@ -1,7 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:voxtag2app/voxtag2/instance/Themes.dart';
+import 'package:voxtag2app/voxtag2/usecases/photos/database/PhotoAlbum.dart';
 import 'package:voxtag2app/voxtag2/usecases/tag/display/shadow_tag.dart';
+import 'package:voxtag2app/voxtag2/usecases/voxtags/VoxTags.dart';
 import 'dart:ui' as ui;
 
 // import '../../../../app/extensions/string.dart';
@@ -67,7 +69,7 @@ class _TagPhotosDialogState extends State<TagPhotosDialog> {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
-                doReplaceButton(context),
+                doCancelButton(context),
                 SizedBox(
                   width: 20,
                 ),
@@ -94,6 +96,17 @@ class _TagPhotosDialogState extends State<TagPhotosDialog> {
             diagnostic = "Letters and numbers only";
           });
         }
+      },
+    );
+  }
+
+  TextButton doCancelButton(BuildContext context) {
+    return TextButton(
+      child: ShadowedButton(tag: 'Cancel'),
+      onPressed: () {
+        VoxTags().instance.clearSelected();
+        PhotosAlbum().refresh(context);
+        Navigator.pop(context);
       },
     );
   }

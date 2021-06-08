@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:voxtag2app/voxtag2/extensions/NavBarButton.dart';
-import 'package:voxtag2app/voxtag2/usecases/photos/share/share_photo_button.dart';
+import 'package:voxtag2app/voxtag2/usecases/photos/share/share_photos_button.dart';
 import 'package:voxtag2app/voxtag2/usecases/photos/tag/tag_photos_button.dart';
 import 'package:voxtag2app/voxtag2/usecases/tags/search/search_tags_button.dart';
 
