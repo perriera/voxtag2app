@@ -20,7 +20,7 @@ class SharePhotosDialog extends StatefulWidget {
 class _SharePhotosDialogState extends State<SharePhotosDialog> {
   var diagnostic = "";
   final myController = EndOfTextController();
-  String newTags = "";
+  String textMessage = "";
 
   bool validateInput(String before) {
     var after = before.allWordsAndNumnbersCaps;
@@ -59,7 +59,7 @@ class _SharePhotosDialogState extends State<SharePhotosDialog> {
                     diagnostic = "";
                   });
                 }
-                newTags = value;
+                textMessage = value;
               }, //
             ),
             SizedBox(
@@ -85,12 +85,12 @@ class _SharePhotosDialogState extends State<SharePhotosDialog> {
     return TextButton(
       child: ShadowedButton(tag: 'Send'),
       onPressed: () {
-        if (validateInput(newTags)) {
+        if (validateInput(textMessage)) {
           Navigator.pop(context);
-          widget.update(newTags, true);
+          widget.update(textMessage, true);
         } else {
           setState(() {
-            newTags = "";
+            textMessage = "";
             myController.text = "";
             diagnostic = "Letters and numbers only";
           });

@@ -22,8 +22,8 @@ class SharePhotosUseCase implements UseCaseInterface {
       showModalBottomSheet(
         context: context,
         builder: (context) => SharePhotosDialog(
-          update: (newTag, append) async {
-            _onShare(context);
+          update: (textMessage, append) async {
+            _onShare(context, textMessage);
             VoxTags().instance.clearSelected();
             PhotosAlbum().refresh(context);
           },
@@ -51,7 +51,7 @@ class SharePhotosUseCase implements UseCaseInterface {
     }
   }
 
-  _onShare(BuildContext context) async {
+  _onShare(BuildContext context, String textMessage) async {
     // A builder is used to retrieve the context immediately
     // surrounding the ElevatedButton.
     //
@@ -63,8 +63,8 @@ class SharePhotosUseCase implements UseCaseInterface {
 
     if (imagePaths.isNotEmpty) {
       await Share.shareFiles(imagePaths,
-          text: "Sample text",
-          subject: "Sample subject",
+          text: textMessage,
+          subject: "VoxTag Share",
           sharePositionOrigin: box.localToGlobal(Offset.zero) & box.size);
     } else {
       ToastDialog(context).display("set imagePaths value", false);
