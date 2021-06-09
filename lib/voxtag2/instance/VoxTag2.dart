@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:instabug_flutter/Instabug.dart';
+import 'package:voxtag2app/voxtag2/instance/Constants.dart';
 import 'package:voxtag2app/voxtag2/instance/Themes.dart';
 import 'package:voxtag2app/voxtag2/system/load_path.dart';
 import 'package:voxtag2app/voxtag2/usecases/main/display/main_display.dart';
@@ -12,7 +13,6 @@ import 'package:voxtag2app/voxtag2/usecases/voxtags/access/obsolete/TagStorage.d
 class VoxTag2 extends StatefulWidget {
   static final String root = '/';
   static final String displayPhoto = '/displayPhoto';
-  static final String photoShare = '/photoShare';
   static final String photoSearch = '/photoSearch';
 
   @override
@@ -26,7 +26,7 @@ class _VoxTag2State extends State<VoxTag2> {
     LoadPath.init().then((applicationPath) {
       print(applicationPath);
       TagsStorage.init(applicationPath);
-      PhotosAlbum().access(context);
+      // PhotosAlbum().access(context);
     });
     initialized = true;
   }
@@ -47,7 +47,7 @@ class _VoxTag2State extends State<VoxTag2> {
         stream: themeSelection.stream,
         builder: (context, snapshot) {
           return MaterialApp(
-            title: 'Flutter Demo',
+            title: Constants.appName(),
             theme: ThemeCatalog.select(context, snapshot.data),
             // ThemeData(
             //   // This is the theme of your application.
@@ -68,20 +68,9 @@ class _VoxTag2State extends State<VoxTag2> {
             routes: <String, WidgetBuilder>{
               VoxTag2.root: (context) => MainDisplay(),
               VoxTag2.displayPhoto: (context) => PhotoDisplay(),
-              VoxTag2.photoShare: (context) => PhotoShare(),
-              // VoxTag3.photoSearch: (context) => TagsSearchLayout(),
             },
             //  home: MainDisplay(),
           );
         });
   }
 }
-
-// class HelloWorld extends StatelessWidget {
-//   @override
-//   Widget build(BuildContext context) {
-//     return Container(child: Text('hello'),
-
-//     );
-//   }
-// }
