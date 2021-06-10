@@ -63,7 +63,7 @@ class PhotosAlbum implements PhotoAppAccessInterface {
       PhotosAlbum._photosIds = convert(photos, context);
       getDescAlbumImg.add(PhotosAlbum._photosIds);
     }).catchError((error) {
-      Fluttertoast.showToast(msg: "Reinstall VoxTag 2");
+      Fluttertoast.showToast(msg: "Photos app permissions required");
     });
   }
 
