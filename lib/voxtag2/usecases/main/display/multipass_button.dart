@@ -5,6 +5,7 @@ import 'package:voxtag2app/voxtag2/extensions/NavBarButton.dart';
 import 'package:voxtag2app/voxtag2/usecases/photos/share/share_photos_button.dart';
 import 'package:voxtag2app/voxtag2/usecases/photos/tag/tag_photos_button.dart';
 import 'package:voxtag2app/voxtag2/usecases/tags/search/search_tags_button.dart';
+import 'package:voxtag2app/voxtag2/usecases/tags/voice_search/voice_search_button.dart';
 
 import 'multipass_stream.dart';
 
@@ -14,7 +15,7 @@ class MultipassButton extends StatelessWidget {
   }) : super(key: key);
 
   static int mode = 0;
-  static int options = 2;
+  static int options = 3;
   static void bump() {
     mode = (mode < options ? mode + 1 : 0);
     multipassStream.add(mode);
@@ -36,8 +37,10 @@ class MultipassButton extends StatelessWidget {
       return TagPhotosButton();
     else if (mode == 1)
       return SearchTagsButton();
-    else
+    else if (mode == 2)
       return SharePhotosButton();
+    else
+      return VoiceSearchButton();
   }
 }
 

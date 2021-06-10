@@ -141,7 +141,7 @@ class _HelpDialogBoxState extends State<HelpDialogBox> {
           textAlign: TextAlign.center,
         ),
         Text(
-          "limited my the devices memory",
+          "limited to available memory.",
           style: ThemeCatalog.kAppBarTextStyle,
           textAlign: TextAlign.center,
         ),
