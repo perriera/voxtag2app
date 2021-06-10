@@ -4,6 +4,8 @@ import 'package:voxtag2app/voxtag2/extensions/NavBarButton.dart';
 import 'package:voxtag2app/voxtag2/extensions/PageNavigator.dart';
 import 'package:voxtag2app/voxtag2/usecases/tags/search/search_tags_layout.dart';
 
+import 'voice_search_usecase.dart';
+
 class VoiceSearchButton extends StatelessWidget {
   const VoiceSearchButton({
     Key key,
@@ -14,9 +16,7 @@ class VoiceSearchButton extends StatelessWidget {
     return NavBarButton(
       icon: FontAwesomeIcons.microphone,
       title: "Voice",
-      onTap: () {
-        PageNavigator(context, TagsSearchLayout()).jump();
-      }, // RefreshPhotoUseCase(context),
+      onTap: () => VoiceSearchUseCase(context),
     );
   }
 }

@@ -252,4 +252,7 @@ class VoxTags implements VoxTagsInterface {
   void unSelectAll() {
     // TODO: implement unSelectAll
   }
+
+  @override
+  bool get hasTags => totalNumberOfTags > 0;
 }
