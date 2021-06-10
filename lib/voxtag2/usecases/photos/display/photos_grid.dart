@@ -3,7 +3,7 @@ import 'dart:io' as io;
 import 'package:flutter/cupertino.dart';
 import 'package:voxtag2app/voxtag2/usecases/columns/GridSizeInterface.dart';
 import 'package:voxtag2app/voxtag2/usecases/columns/GridSizeUpdate.dart';
-import 'package:voxtag2app/voxtag2/usecases/photos/access/view_status.dart';
+import 'package:voxtag2app/voxtag2/usecases/photos/access/display_access_status.dart';
 import 'package:voxtag2app/voxtag2/usecases/photos/database/PhotoAlbum.dart';
 import 'package:voxtag2app/voxtag2/usecases/photos/database/PhotosUpdate.dart';
 import 'package:voxtag2app/voxtag2/usecases/photos/display/photos_spinner.dart';
@@ -38,7 +38,7 @@ class PhotosGrid extends StatelessWidget {
                   );
                 });
           } catch (e) {
-            return PhotosStatus(msg: e);
+            return DisplayAccessStatus(msg: e);
           }
         });
   }

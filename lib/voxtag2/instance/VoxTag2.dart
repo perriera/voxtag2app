@@ -7,6 +7,7 @@ import 'package:voxtag2app/voxtag2/system/load_path.dart';
 import 'package:voxtag2app/voxtag2/usecases/main/display/main_display.dart';
 import 'package:voxtag2app/voxtag2/usecases/photo/share/share_photo.dart';
 import 'package:voxtag2app/voxtag2/usecases/photo/view/photo_display.dart';
+import 'package:voxtag2app/voxtag2/usecases/photos/access/access_photos_app.dart';
 import 'package:voxtag2app/voxtag2/usecases/photos/database/PhotoAlbum.dart';
 import 'package:voxtag2app/voxtag2/usecases/voxtags/access/obsolete/TagStorage.dart';
 
@@ -26,6 +27,7 @@ class _VoxTag2State extends State<VoxTag2> {
     LoadPath.init().then((applicationPath) {
       print(applicationPath);
       TagsStorage.init(applicationPath);
+      AccessPhotosApp.init(applicationPath);
       // PhotosAlbum().access(context);
     });
     initialized = true;

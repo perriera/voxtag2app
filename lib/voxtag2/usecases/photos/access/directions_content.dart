@@ -113,35 +113,33 @@ class _DirectionsContentState extends State<DirectionsContent> {
         SizedBox(
           height: 22,
         ),
-        Align(
-          alignment: Alignment.bottomRight,
-          child: TextButton(
-              onPressed: () {
-                Navigator.of(context).pop();
-              },
-              child: Text(
-                'Ok',
-                style: TextStyle(
-                  fontSize: 18,
-                  color: Colors.white,
-                ),
-              )),
-        ),
       ],
     );
   }
 
+  String title = 'Request Access';
+
   TextButton requestButton(BuildContext context) {
     return TextButton(
-      child: ShadowedButton(tag: 'Request Access'),
+      child: ShadowedButton(tag: title),
       onPressed: () {
         PhotosAlbum().request(context, (status, context) {
           print(status);
-          if (status == PermissionStatus.granted)
+          if (status == PermissionStatus.granted) {
             widget.success(status);
-          else
+            setState(() {
+              title = 'Press Refresh (below)';
+            });
+          } else {
+            setState(() {
+              title = 'Reinstall VoxTag 2';
+            });
             widget.diagnostic(status);
+          }
         }, (error) {
+          setState(() {
+            title = 'Reinstall VoxTag 2';
+          });
           widget.fail(error);
         });
       },

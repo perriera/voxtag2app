@@ -58,8 +58,9 @@ class _CheckAccessStatusState extends State<CheckAccessStatus>
   }
 
   void checkAccess(AsyncSnapshot<PermissionStatus> snapshot) {
+    var accessingPhotosMsg = 'Accessing Photos ... ';
     if (snapshot.data == null)
-      throw 'Accessing Photos ... ';
+      throw accessingPhotosMsg;
     else {
       switch (snapshot.data) {
         case PermissionStatus.granted:
@@ -69,7 +70,7 @@ class _CheckAccessStatusState extends State<CheckAccessStatus>
         case PermissionStatus.restricted:
           throw 'Photos access restricted';
         case PermissionStatus.undetermined:
-          throw 'Press Refresh';
+          throw accessingPhotosMsg;
         case PermissionStatus.permanentlyDenied:
           throw 'Photos access denied';
         default:

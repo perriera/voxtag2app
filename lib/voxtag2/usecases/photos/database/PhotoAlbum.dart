@@ -31,13 +31,28 @@ class PhotosAlbum implements PhotoAppAccessInterface {
   }
 
   @override
-  void access(BuildContext context) {
+  void request(BuildContext context, Function pass, Function fail) {
     PhotoAlbumManager.checkPermissions().then((status) {
+      pass(status, context);
+    }).catchError((error) {
+      fail(error);
+    });
+  }
+
+  @override
+  void access(BuildContext context) {
+    request(context, (status, context) {
       checkPermissions.add(status);
       refresh(context);
-    }).catchError((error) {
-      Fluttertoast.showToast(msg: "Photos app access denied");
+    }, (error) {
+      Fluttertoast.showToast(msg: error.toString());
     });
+    // PhotoAlbumManager.checkPermissions().then((status) {
+    //   checkPermissions.add(status);
+    //   refresh(context);
+    // }).catchError((error) {
+    //   Fluttertoast.showToast(msg: "Photos app access denied");
+    // });
   }
 
   @override

@@ -1,5 +1,5 @@
 import 'package:flutter/cupertino.dart';
-import 'package:voxtag2app/voxtag2/usecases/photos/access/view_status.dart';
+import 'package:voxtag2app/voxtag2/usecases/photos/access/display_access_status.dart';
 
 class UBDError extends StatelessWidget {
   final String msg;
@@ -16,7 +16,7 @@ class UBDError extends StatelessWidget {
       onTap: () {
         Navigator.pushNamed(context, whereTo);
       },
-      child: PhotosStatus(msg: msg),
+      child: DisplayAccessStatus(msg: msg),
     );
   }
 }
