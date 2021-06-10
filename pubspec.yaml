@@ -39,7 +39,7 @@ dependencies:
   documents_picker: ^1.0.0
   flutter_share: ^2.0.0
   screenshot: ^0.3.0
-  instabug_flutter:
+#  instabug_flutter:
   share: ^2.0.4
 
   # photo_view: ^0.10.1

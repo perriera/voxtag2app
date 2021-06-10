@@ -84,7 +84,7 @@ class _DirectionsContentState extends State<DirectionsContent> {
           height: 15,
         ),
         Text(
-          "Click the button below to request",
+          "Click below to request",
           style: ThemeCatalog.kAppBarTextStyle,
           textAlign: TextAlign.center,
         ),

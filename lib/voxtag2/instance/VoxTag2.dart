@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:instabug_flutter/Instabug.dart';
+// import 'package:instabug_flutter/Instabug.dart';
 import 'package:voxtag2app/voxtag2/instance/Constants.dart';
 import 'package:voxtag2app/voxtag2/instance/Themes.dart';
 import 'package:voxtag2app/voxtag2/system/load_path.dart';
@@ -33,11 +33,11 @@ class _VoxTag2State extends State<VoxTag2> {
     initialized = true;
   }
 
-  @override
-  void initState() {
-    super.initState();
-    Instabug.start('a79bc45735944cf249dc13944420fa25', [InvocationEvent.shake]);
-  }
+  // @override
+  // void initState() {
+  //   super.initState();
+  //   Instabug.start('a79bc45735944cf249dc13944420fa25', [InvocationEvent.shake]);
+  // }
 
   @override
   Widget build(BuildContext context) {

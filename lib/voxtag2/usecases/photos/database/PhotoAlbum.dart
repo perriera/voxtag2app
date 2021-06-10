@@ -60,12 +60,10 @@ class PhotosAlbum implements PhotoAppAccessInterface {
     PhotoAlbumManager.getDescAlbumImg().then((photos) {
       var msg = '${photos.length} photos loaded';
       Fluttertoast.showToast(msg: msg);
-//      Toast.show(msg, context);
       PhotosAlbum._photosIds = convert(photos, context);
       getDescAlbumImg.add(PhotosAlbum._photosIds);
     }).catchError((error) {
-      Fluttertoast.showToast(msg: "Photos app access granted");
-//      Toast.show("Photos app access granted", context);
+      Fluttertoast.showToast(msg: "Reinstall VoxTag 2");
     });
   }
 
