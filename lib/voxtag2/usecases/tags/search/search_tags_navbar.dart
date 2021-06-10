@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:voxtag2app/voxtag2/instance/Themes.dart';
 import 'package:voxtag2app/voxtag2/usecases/photos/refresh/refresh_photos_button.dart';
 import 'package:voxtag2app/voxtag2/usecases/tags/tags_query_button.dart';
+import 'package:voxtag2app/voxtag2/usecases/tags/voice_search/voice_search_button.dart';
 
 import '../tag_actionbutton.dart';
 import '../tags_more_button.dart';
@@ -18,7 +19,7 @@ class TagsNavBar extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: <Widget>[
           RefreshPhotosButton(),
-          TagsQueryButton(),
+          VoiceSearchButton(),
           TagActionButton(),
           TagsMoreButton(),
         ],
