@@ -32,7 +32,7 @@ samples, guidance on mobile development, and a full API reference.
 
 ## Who would want to use this?
 This code is intended for the VoxTag/VoxTag2 project as coordinated between EXPARX, WholeRealm and RGI Technologies.
-[Video Demo of VoxTag2](https://github.com/perriera/voxtag2app/blob/dev/images/demos/Build%2061%20Demo.m4v)
+[Video Demo of VoxTag2](https://github.com/perriera/voxtag2app/tree/dev/images/demos)
 >
 > Presently intended for iPhone and Android platforms only.
 >
