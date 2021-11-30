@@ -23,7 +23,7 @@ samples, guidance on mobile development, and a full API reference.
 
 # voxtag2app
 
-![CMake](https://github.com/mattcoding4days/extras/actions/workflows/cmake.yml/badge.svg?branch=dev)](https://github.com/mattcoding4days/extras/actions/workflows/cmake.yml)
+[![CMake](https://github.com/mattcoding4days/extras/actions/workflows/cmake.yml/badge.svg?branch=dev)](https://github.com/mattcoding4days/extras/actions/workflows/cmake.yml)
 
 <div align="center">
   <img width="442" height="320" src="images/logos/WRT_logo-H-bw-1.jpg">
