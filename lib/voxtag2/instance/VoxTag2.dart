@@ -1,114 +1,96 @@
+///
+/// @brief the "MIT/X Consortium License", (adapted for EXPARX.COM)
+///
+/// Copyright (C) November 22, 2021 EXPARX INCORPORATED
+///
+/// THE SOFTWARE IS  PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+/// EXPRESSED  OR   IMPLIED,  INCLUDING   BUT  NOT  LIMITED  TO  THE
+/// WARRANTIES OF MERCHANTABILITY, FITNESS FOR A  PARTICULAR PURPOSE
+/// AND NON-INFRINGEMENT.  IN  NO  EVENT  SHALL EXPARX  INCORPORATED
+/// BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER  IN
+/// AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING  FROM, OUT  OF
+/// OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR  OTHER DEALINGS
+/// IN THE SOFTWARE.
+///
+/// (See LICENSE.md for complete details)
+///
+
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+// import 'package:instabug_flutter/Instabug.dart';
+import 'package:voxtag2app/voxtag2/instance/Constants.dart';
+import 'package:voxtag2app/voxtag2/instance/Themes.dart';
+import 'package:voxtag2app/voxtag2/system/load_path.dart';
+import 'package:voxtag2app/voxtag2/usecases/main/display/main_display.dart';
+import 'package:voxtag2app/voxtag2/usecases/photo/share/share_photo.dart';
+import 'package:voxtag2app/voxtag2/usecases/photo/view/photo_display.dart';
+import 'package:voxtag2app/voxtag2/usecases/photos/access/access_photos_app.dart';
+import 'package:voxtag2app/voxtag2/usecases/photos/database/PhotoAlbum.dart';
+import 'package:voxtag2app/voxtag2/usecases/voxtags/access/obsolete/TagStorage.dart';
 
-class VoxTag2 extends StatelessWidget {
-  // This widget is the root of your application.
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        // This is the theme of your application.
-        //
-        // Try running your application with "flutter run". You'll see the
-        // application has a blue toolbar. Then, without quitting the app, try
-        // changing the primarySwatch below to Colors.green and then invoke
-        // "hot reload" (press "r" in the console where you ran "flutter run",
-        // or simply save your changes to "hot reload" in a Flutter IDE).
-        // Notice that the counter didn't reset back to zero; the application
-        // is not restarted.
-        primarySwatch: Colors.blue,
-        // This makes the visual density adapt to the platform that you run
-        // the app on. For desktop platforms, the controls will be smaller and
-        // closer together (more dense) than on mobile platforms.
-        visualDensity: VisualDensity.adaptivePlatformDensity,
-      ),
-      home: MyHomePage(title: 'VoxTag2 App'),
-    );
-  }
-}
-
-class MyHomePage extends StatefulWidget {
-  MyHomePage({Key key, this.title}) : super(key: key);
-
-  // This widget is the home page of your application. It is stateful, meaning
-  // that it has a State object (defined below) that contains fields that affect
-  // how it looks.
-
-  // This class is the configuration for the state. It holds the values (in this
-  // case the title) provided by the parent (in this case the App widget) and
-  // used by the build method of the State. Fields in a Widget subclass are
-  // always marked "final".
-
-  final String title;
+class VoxTag2 extends StatefulWidget {
+  static final String root = '/';
+  static final String displayPhoto = '/displayPhoto';
+  static final String photoSearch = '/photoSearch';
 
   @override
-  _MyHomePageState createState() => _MyHomePageState();
+  State<VoxTag2> createState() => _VoxTag2State();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
+class _VoxTag2State extends State<VoxTag2> {
+  bool initialized = false;
 
-  void _incrementCounter() {
-    setState(() {
-      // This call to setState tells the Flutter framework that something has
-      // changed in this State, which causes it to rerun the build method below
-      // so that the display can reflect the updated values. If we changed
-      // _counter without calling setState(), then the build method would not be
-      // called again, and so nothing would appear to happen.
-      _counter++;
+  void initApp(BuildContext context) {
+    LoadPath.init().then((applicationPath) {
+      print(applicationPath);
+      TagsStorage.init(applicationPath);
+      AccessPhotosApp.init(applicationPath);
+      // PhotosAlbum().access(context);
     });
+    initialized = true;
   }
+
+  // @override
+  // void initState() {
+  //   super.initState();
+  //   Instabug.start('a79bc45735944cf249dc13944420fa25', [InvocationEvent.shake]);
+  // }
 
   @override
   Widget build(BuildContext context) {
-    // This method is rerun every time setState is called, for voxtag2.instance as done
-    // by the _incrementCounter method above.
-    //
-    // The Flutter framework has been optimized to make rerunning build methods
-    // fast, so that you can just rebuild anything that needs updating rather
-    // than having to individually change instances of widgets.
-    return Scaffold(
-      appBar: AppBar(
-        // Here we take the value from the MyHomePage object that was created by
-        // the App.build method, and use it to set our appbar title.
-        title: Text(widget.title),
-      ),
-      body: Center(
-        // Center is a layout widget. It takes a single child and positions it
-        // in the middle of the parent.
-        child: Column(
-          // Column is also a layout widget. It takes a list of children and
-          // arranges them vertically. By default, it sizes itself to fit its
-          // children horizontally, and tries to be as tall as its parent.
-          //
-          // Invoke "debug painting" (press "p" in the console, choose the
-          // "Toggle Debug Paint" action from the Flutter Inspector in Android
-          // Studio, or the "Toggle Debug Paint" command in Visual Studio Code)
-          // to see the wireframe for each widget.
-          //
-          // Column has various properties to control how it sizes itself and
-          // how it positions its children. Here we use mainAxisAlignment to
-          // center the children vertically; the main axis here is the vertical
-          // axis because Columns are vertical (the cross axis would be
-          // horizontal).
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Text(
-              'You have pushed the button this many times:',
-            ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headline4,
-            ),
-          ],
-        ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
-    );
+    if (!initialized) {
+      initApp(context);
+    }
+    return StreamBuilder<Object>(
+        initialData: 0,
+        stream: themeSelection.stream,
+        builder: (context, snapshot) {
+          return MaterialApp(
+            title: Constants.appName(),
+            theme: ThemeCatalog.select(context, snapshot.data),
+            // ThemeData(
+            //   // This is the theme of your application.
+            //   //
+            //   // Try running your application with "flutter run". You'll see the
+            //   // application has a blue toolbar. Then, without quitting the app, try
+            //   // changing the primarySwatch below to Colors.green and then invoke
+            //   // "hot reload" (press "r" in the console where you ran "flutter run",
+            //   // or simply save your changes to "hot reload" in a Flutter IDE).
+            //   // Notice that the counter didn't reset back to zero; the application
+            //   // is not restarted.
+            //   primarySwatch: Colors.blue,
+            //   // This makes the visual density adapt to the platform that you run
+            //   // the app on. For desktop platforms, the controls will be smaller and
+            //   // closer together (more dense) than on mobile platforms.
+            //   visualDensity: VisualDensity.adaptivePlatformDensity,
+            // ),
+            routes: <String, WidgetBuilder>{
+              VoxTag2.root: (context) => MainDisplay(),
+              VoxTag2.displayPhoto: (context) => PhotoDisplay(),
+            },
+            //  home: MainDisplay(),
+          );
+        });
   }
 }
