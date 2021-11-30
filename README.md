@@ -23,7 +23,7 @@ samples, guidance on mobile development, and a full API reference.
 
 # voxtag2app
 
-[![CMake](https://github.com/mattcoding4days/extras/actions/workflows/cmake.yml/badge.svg?branch=dev)](https://github.com/mattcoding4days/extras/actions/workflows/cmake.yml)
+![CMake](https://github.com/mattcoding4days/extras/actions/workflows/cmake.yml/badge.svg?branch=dev)](https://github.com/mattcoding4days/extras/actions/workflows/cmake.yml)
 
 <div align="center">
   <img width="442" height="320" src="images/logos/WRT_logo-H-bw-1.jpg">
@@ -32,7 +32,7 @@ samples, guidance on mobile development, and a full API reference.
 
 ## Who would want to use this?
 This code is intended for the VoxTag/VoxTag2 project as coordinated between EXPARX, WholeRealm and RGI Technologies.
-
+[Video Demo of VoxTag2](https://github.com/perriera/voxtag2app/blob/dev/images/demos/Build%2061%20Demo.m4v)
 >
 > Presently intended for iPhone and Android platforms only.
 >
