@@ -5,7 +5,7 @@
 > and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).</br>
 > To add a tag to the git repository do:
 > > git tag -a v0.2.0 -m "Added changelog.md"</br>
-> > git push origin v0.10.0
+> > git push origin v0.2.0
 > 
 
 IMPORTANT: 
